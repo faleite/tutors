@@ -191,12 +191,15 @@ STAGING AREA -> O arquivo esta numa area intermediaria do git quando passamos o 
 .GIT DIRECTORY (REPOSITORY) -> O arquivo esta no git quando fazemos o -> commit
 ___
 
-#### ENVIAR PROJETO PARA O GITHUB
+#### ENVIAR PROJETO PARA REPOSITÓRIO NO GITHUB VIA SSH
 
-CONECTAR DIRETÓRIO AO REPOSITÓTIO NO GITHUB:
-**git remote add origin https://github.com/faleite/nomereporitorio**
+1. CONECTAR DIRETÓRIO AO REPOSITÓRIO:
+**git remote add origin git@github.com:faleite/tutors.git**
 
-ENVIAR ARQUIVOS PARA O GITHUB: **git push -u origin master**
+2. NOMEAR BRANCH DO REPOSITÓTIO:
+**git branch -M main**
+
+3. ENVIAR ARQUIVOS PARA O GITHUB: **git push -u origin main**
 
 TRASER ARQUIVOS DO GITHUB PARA O DIRETÓRIO: **git pull**
 ___
