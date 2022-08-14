@@ -1,6 +1,6 @@
 # T M U X
 
-Guia prático para uso do tmux
+## Guia prático para uso do tmux
 ___
 
 Comando Base (Prefixo):
