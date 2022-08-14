@@ -1,24 +1,10 @@
 # G I T  /  G I T H U B
 
-##### INICIAR REPOSITÓRIO
+## INICIAR REPOSITÓRIO
 
 NO DIRETÓRIO CRIADO PARA O GIT DE O COMANDO: **git init**
 
 * Sera criado uma pasta .git no diretório.
-
-DICAS:
-- hint: Using 'master' as the name for the initial branch. This default branch name
-is subject to change. To configure the initial branch name to use in all
-
-- hint: of your new repositories, which will suppress this warning, call:
-
-git config --global init.defaultBranch <name>
-
-- hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and 'development'.
-
-- The just-created branch can be renamed via this command:
-
-hint:   git branch -m <name>
 ___
 
 SABER ESTADO DO GIT: **git status**
@@ -77,7 +63,7 @@ MOSTRAR NO GIT O QUE MUDOU DE AGORA PARA O ULTIMO COMMIT:
 **git diff**
 ___
 
-##### GIT LOG
+## GIT LOG
 
 VER CADA UMA DAS ALTERAÇÕES QUE JA FORAM FEITAS: **git log -p**
 
@@ -103,7 +89,7 @@ MOSTRAR OS COMMITS POR AUTOR: **git log --author="Fabricio Araujo"**
 BUSCAR COMMITS POR PALAVRAS: **git log --grep="Olá"**
 ___
 
-##### GIT BRANCH - GIT MERGE
+## GIT BRANCH - GIT MERGE
 
 CRIAR UMA NOVA BRANCH: **git checkout -b aulaBranch**
 
@@ -117,7 +103,7 @@ EMCORPORAR MODIFICAÇÃO DE UMA OUTRA BRANCH NA BRANCH MASTER: **git merge aulaB
 (aulaBranch -> nome da branch)
 ___
 
-#### GIT CONFIG
+## GIT CONFIG
 
 LISTAR AS VARIÁVEIS DE CONFIGURAÇÃO DO GIT: **git config -l** ou  **git config --list**
 
@@ -135,7 +121,7 @@ CRIAR ATALHOS COM ALIAS DO GIT: (alias.conf -> conf = nome do atalho)
 DELETAR ATALHO FEITO NO GIT: **git config --unset alias.conf** (alias.conf -> nome atalho)
 ___
 
-#### GIT COMMIT --AMEND
+## GIT COMMIT --AMEND
 
 ALTERAR A MENSSAGEM DO ULTIMO COMMIT: **git commit --amend**
 (o ammend altera o commit para um novo, fazendo a mudança do hash)
@@ -151,7 +137,7 @@ ADICIONAR CO-AUTOR NO COMMIT: **git commit -m 'Menssagem sobre o arquivo!
 > Co-authored-by: nome <email.@email.com>'**
 ___
 
-#### GIT REBASE
+## GIT REBASE
 
 EDITAR EM SEQUÊNCIA VÁRIOS COMMITS: **git rebase -i HEAD~4** (HEAD~4 = edita os 4 ultimos comites)
 -> para editar os commits substitua a palavra 'pick' por 'edit'
@@ -166,7 +152,7 @@ COMPRIMIR VÁRIOS COMMITS EM UM UNICO COMMIT COM SQUASH:
 -> Continuar o rebase para fazer o squash: **git rebase --continue**
 ___
 
-#### GIT CLONE
+## GIT CLONE
 
 CLONAR REPOSITÓRIO VIA HTTPS:
 -> Dentro do diretório passe o respectivo comando junto com o link https do repesitório:
@@ -182,7 +168,7 @@ MOSTRAR CONTEÚDO DO ARQUIVO: **cat 'nome-arquivo.txt'**
 ENVIAR COMMIT PARA O GITHUB: **git push**
 ___
 
-#### OS TRÊS ESTÁGIOS DO GIT
+## OS TRÊS ESTÁGIOS DO GIT
 
 WORKING TREE (DIRECTORY) -> O arquivo esta apenas no diretório
 
@@ -191,7 +177,7 @@ STAGING AREA -> O arquivo esta numa area intermediaria do git quando passamos o 
 .GIT DIRECTORY (REPOSITORY) -> O arquivo esta no git quando fazemos o -> commit
 ___
 
-#### ENVIAR PROJETO PARA REPOSITÓRIO NO GITHUB VIA SSH
+## ENVIAR PROJETO PARA REPOSITÓRIO NO GITHUB VIA SSH
 
 1. CONECTAR DIRETÓRIO AO REPOSITÓRIO:
 **git remote add origin git@github.com:faleite/tutors.git**
@@ -204,7 +190,7 @@ ___
 TRASER ARQUIVOS DO GITHUB PARA O DIRETÓRIO: **git pull**
 ___
 
-#### RENOMEAR BRANCH
+## BRANCH
 
 RENOMEAR BRANCH LOCAL: **git branch -m 'novo-nome'**
 (Você deve estar na branch que deseja alter o nome)
@@ -212,3 +198,29 @@ RENOMEAR BRANCH LOCAL: **git branch -m 'novo-nome'**
 RENOMEAR UMA BRANCH ENQUANTO ESTA EM OUTRA: **git branch -m 'nome-antigo' 'novo-nome'**
 (Se você quer alterar o nome de outra branch, enquanto está na master, por exemplo)
 
+RENOMEAR BRANCH DEFAULT GLOBAL: **git config --global init.defaultBranch <novo-nome>**
+___
+
+MOSTRAR NOME DO REPOSITÓTIO REMOTO: **git remote**
+
+MOSTRAR CAMINHO DO REPOSITÓTIO REMOTO: **git remote -v**
+
+MOSTRAR BRANCHES EXISTENTES NO REPOSITÓTIO: **git branch**
+
+MOSTRAR NOME E ULTIMO COMMIT DA BRANCH LOCAL: **git branch -v**
+
+MOSTRAR NOME E ULTIMO COMMIT DA BRANCH REMOTA: **git branch -vv**
+___
+
+## TAGS DE COMMIT NO GIT
+
+CRIAR UMA TAG: **git tag -a v1.0 -m 'Primeira Versão'**
+(v1.0 -> nome da tag, Primeira Versão -> mensagem da tag)
+
+LISTAR TODAS AS TAGS CRIADAS: **git tag**
+
+LISTAR TODAS AS TAGS CRIADAS E SUAS RESPECTIVAS MENSAGENS: **git tag -n**
+
+MOSTRAR O CONTEÚDO DAS TEGS: **git show --tags**
+
+APAGAR TAGS: **git tag -d v1.0** (v1.0 -> nome da tag)
