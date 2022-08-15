@@ -186,8 +186,22 @@ ___
 **git branch -M main**
 
 3. ENVIAR ARQUIVOS PARA O GITHUB: **git push -u origin main**
+___
 
-TRASER ARQUIVOS DO GITHUB PARA O DIRETÓRIO: **git pull**
+## BAIXAR ARQUIVOS DO GITHUB:
+
+TRASER BRANCH DO GITHUB E INCORPORAR NA BRANCH LOCAL: **git pull**
+    - git pull -> é a combinação de: git fetch + git merge)
+    - Para usar trazer branch especifica utiliza -> **git pull origin <nome-branch>**
+
+BAIXAR ALTERAÇÕES DO REPOSITÓRIO REMOTO, SEM INCORPORAR NO REPOSITÓRIO LOCAL: **git fetch**
+    - Para usar trazer branch especifica utiliza -> **git fetch origin <nome-branch>**
+
+MOSTRAR DIFENÇA ENTRE UMA BRANCH E OUTRA: **git diff main origin/main**
+
+TRASER A BRANCH REMOTA PARA A BRANCH LOCAL: **git merge**
+
+TRASER A BRANCH ORIGIN/MAIN PARA A BRANCH MAIN: **git merge origin/main**
 ___
 
 ## BRANCH
