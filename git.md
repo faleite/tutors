@@ -238,3 +238,15 @@ LISTAR TODAS AS TAGS CRIADAS E SUAS RESPECTIVAS MENSAGENS: **git tag -n**
 MOSTRAR O CONTEÚDO DAS TEGS: **git show --tags**
 
 APAGAR TAGS: **git tag -d v1.0** (v1.0 -> nome da tag)
+
+## MENSSAGEM PADRONIZADA DO COMIIT NO GIT:
+
+1. CRIA ARQUIVO COM O NOME: **.git message**
+
+2. EDITE UMA MENSSAGEM PADRÃO NESTE ARQUIVO: **.git message**
+
+3. CONFIGURAR O TEMPLATE DA MENSSAGEM NO GIT: **git config commit.tamplate .gitmessage**
+
+4. LISTAR A VARIÁVERIS QUE FORAM CONFIGURADAS NO GIT: **git config --list**
+
+5. FAZER COMMIT COM MENSSAGEM PADRONISADA: **git commit**
