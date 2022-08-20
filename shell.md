@@ -69,3 +69,5 @@ REMOVER DIRETORIO: **rm -rf 'nome-diretorio'**
 MOVER ARQUIVO/DIRETÓRIO: **mv 'nome-arquivo' ~/endereço/para-onde/vai-mover**
 
 MOVER TODOS OS ARQUIVOS COM A MESMA EXTENSÃO: **mv *.md ~/endereço/para-onde/vai-mover**
+
+RENOMEAR ARQUIVO: **mv nome-arquivo.py novo-nome.py**
