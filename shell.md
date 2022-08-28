@@ -43,9 +43,6 @@ ALTERAR PERMISSÕES: **chmod**
 (ex. chmod o=r tarefas.md)
 ___
 
-CRIAR ARQUIVO: **touch nomearquivo**
-___
-
 ##### CRIAR VARIAVEL
 
 CRIAR UMA VARIAVEL PARA UM DIRETÓRIO:
@@ -71,3 +68,33 @@ MOVER ARQUIVO/DIRETÓRIO: **mv 'nome-arquivo' ~/endereço/para-onde/vai-mover**
 MOVER TODOS OS ARQUIVOS COM A MESMA EXTENSÃO: **mv *.md ~/endereço/para-onde/vai-mover**
 
 RENOMEAR ARQUIVO: **mv nome-arquivo.py novo-nome.py**
+
+CRIAR ARQUIVO: **touch nomearquivo**
+
+MOSTRAR NA TELA O CONTEÚDO DO ARQUIVO: **cat [nome-do-arquivo]**
+
+GERAR DIRETÓRIO: **mkdir [nome-do-diretorio]**
+
+GERAR DIRETÓRIO DENTRO DE DIRETÓRIO: **mkdir -p [teste/teste1/teste3]**
+
+GERAR ARQUIVO TEMPORÁRIO: **mktemp ./tmp.XXXX**
+* ./ -> diretório atual
+* tmp.XXXX -> nome do arquivo
+* XXXX -> gera uma extensão aleatória
+
+##### HITÓRICO DE COMANDOS
+
+EXIBIR HITÓRICO DE COMANDOS: **history**
+
+EXECUTAR COMANDO ATRAVÉS DO NUMERO DO SEU HITÓRICO: **![numero-do-comando]**
+
+EXECUTAR ÚLTIMO COMANDO: **!!**
+
+EXIBIR COMANDO ATRAVÉS DE BUSCA NO HITÓRICO APENAS COM O PARTE DO SEU NOME:
+**![parte-do-nome]** ex. **!echo**
+(Para buscar ele percorre o histórico de traz para frente)
+
+MOSTRAR ÚTIMAS 5 LINHAS DO HITÓRICO DE COMANDOS: **history | tail -5**
+
+ENVIAR O HITÓRICO DAS ÚTIMAS 5 LINHAS DE COMANDOS PARA UM ARQUIVO:
+**history | tail -5 >> arquivo.txt**
