@@ -3,15 +3,17 @@ ___
 
 ##### COMANDOS
 
-EXIBIR MENSAGEM OU NOME DE
-UMA VARIÁVEL: **echo $SHELL**
-*$SHELL* = nome da variavel
+EXIBIR MENSAGEM OU NOME DE UMA VARIÁVEL: **echo $SHELL** -> [nome-variavel]
+    - $SHELL -> caminho do shell
+    - $HOME -> caminho do usuário
 
 MOSTRAR DIRETÓRIO ATUAL: **pwd**
 
 IR PARA DIRETÓRIO A CIMA: **cd ..**
 
 IR PARA DIRETÓRIO ANTERIOR: **cd -**
+
+IR PARA A PASTA HOME DO USUARIO: **cd**
 
 **$HOME** REPRESENTA O DIRETÓRIO HOME
 ___
@@ -67,9 +69,9 @@ MOVER ARQUIVO/DIRETÓRIO: **mv 'nome-arquivo' ~/endereço/para-onde/vai-mover**
 
 MOVER TODOS OS ARQUIVOS COM A MESMA EXTENSÃO: **mv *.md ~/endereço/para-onde/vai-mover**
 
-RENOMEAR ARQUIVO: **mv nome-arquivo.py novo-nome.py**
+RENOMEAR ARQUIVO/DIRETÓRIO: **mv nome-arquivo.py novo-nome.py**
 
-CRIAR ARQUIVO: **touch nomearquivo**
+CRIAR ARQUIVO: **touch nomearquivo.txt**
 
 MOSTRAR NA TELA O CONTEÚDO DO ARQUIVO: **cat [nome-do-arquivo]**
 
@@ -98,3 +100,13 @@ MOSTRAR ÚTIMAS 5 LINHAS DO HITÓRICO DE COMANDOS: **history | tail -5**
 
 ENVIAR O HITÓRICO DAS ÚTIMAS 5 LINHAS DE COMANDOS PARA UM ARQUIVO:
 **history | tail -5 >> arquivo.txt**
+
+##### . e ..
+
+. -> REPRESENTA O DIRETÓRIO ATUAL
+
+.. -> REPRESENTA O DIRETÓRIO ACIMA DO ATUAL
+
+./[nome-arquivo] -> ACESSA O ARQUIVO NO DIRETÓRIO ATUAL
+
+
