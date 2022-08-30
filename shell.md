@@ -79,6 +79,9 @@ GERAR DIRETÓRIO: **mkdir [nome-do-diretorio]**
 
 GERAR DIRETÓRIO DENTRO DE DIRETÓRIO: **mkdir -p [teste/teste1/teste3]**
 
+PASSAR MAIS DE UM COMANDO NO SHELL: **;** ex. -> mkdir testeCat; cd testeCat
+(Os comando são separados por **;**)
+
 GERAR ARQUIVO TEMPORÁRIO: **mktemp ./tmp.XXXX**
 * ./ -> diretório atual
 * tmp.XXXX -> nome do arquivo
@@ -109,4 +112,20 @@ ENVIAR O HITÓRICO DAS ÚTIMAS 5 LINHAS DE COMANDOS PARA UM ARQUIVO:
 
 ./[nome-arquivo] -> ACESSA O ARQUIVO NO DIRETÓRIO ATUAL
 
+##### COPIAR ARQUIVOS E DIRETÓRIOS
 
+COPIAR ARQUIVO: **cp [nome-arquivo] [novo-nome ou local-a-salvar]**
+
+COPIAR DIRETÓRIO: **cp -r [nome-diretório] [novo-nome ou local-a-salvar]**
+
+##### EXIBIR CONTEÚDO DOS ARQUIVOS E CONCATENAR
+
+ENVIAR TEXTO PARA ARQUIVO PELO SHELL: **echo "linha do texto" >> nome-arquivo.txt**
+
+EXIBIR CONTEÚDO DO ARQUIVO NO SHELL: **cat nome-arquivo.txt**
+
+EXIBIR CONTEÚDO DE MAIS DE UM ARQUIVO NO SHELL: **cat arq2.txt arq1.txt**
+
+CONCATENAR TEXTO DE MAIS DE UM ARQUIVO: **cat arq2.txt arq1.txt >> arqConcatenado.txt**
+
+EXIBIR CONTEÚDO DO ARQUIVO COM LINHAS NUMERADAS NO SHELL: **cat -n arqConcatenado.txt**
