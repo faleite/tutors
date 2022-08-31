@@ -65,6 +65,14 @@ SUA EXTENÇÃO:
 
 REMOVER DIRETORIO: **rm -rf 'nome-diretorio'**
 
+REMOVER DIRETORIO: **rmdir -r 'nome-diretorio'**
+
+REMOVER DIRETORIO VAZIO: **rmdir 'nome-diretorio'**
+
+REMOVER ARQUIVO: **rm 'nome-arquivo'**
+
+REMOVER ARQUIVO COM PEDIDO DE CONFIRMAÇÃO: **rm -i 'nome-arquivo'**
+
 MOVER ARQUIVO/DIRETÓRIO: **mv 'nome-arquivo' ~/endereço/para-onde/vai-mover**
 
 MOVER TODOS OS ARQUIVOS COM A MESMA EXTENSÃO: **mv *.md ~/endereço/para-onde/vai-mover**
@@ -129,3 +137,17 @@ EXIBIR CONTEÚDO DE MAIS DE UM ARQUIVO NO SHELL: **cat arq2.txt arq1.txt**
 CONCATENAR TEXTO DE MAIS DE UM ARQUIVO: **cat arq2.txt arq1.txt >> arqConcatenado.txt**
 
 EXIBIR CONTEÚDO DO ARQUIVO COM LINHAS NUMERADAS NO SHELL: **cat -n arqConcatenado.txt**
+
+##### PIPE
+
+ESCREVER CODIGO EM MAIS DE UMA LINMHA NO SHELL: **\** -> Para continuar na proxima linha
+
+CALCULADORA DO SHELL COM FLOAT: **bc -l**
+
+EXECUTAR MAIS DE UM COMANDO NO SHELL: **|** -> ex.
+>>> echo "2+1" | bc -l
+>>> 3
+
+>>> echo "2+3" | bc -l >> arq.txt
+>>> cat arq.txt
+>>> 5
