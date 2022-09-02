@@ -148,6 +148,47 @@ EXECUTAR MAIS DE UM COMANDO NO SHELL: **|** -> ex.
 >>> echo "2+1" | bc -l
 >>> 3
 
->>> echo "2+3" | bc -l >> arq.txt
+>>> ec>ho "2+3" | bc -l >> arq.txt
 >>> cat arq.txt
 >>> 5
+
+##### CUT -> FILTRAR SAÍDAS
+
+EXEMPLOS:
+>> echo "Fabricio" | cut -c1
+>>> F
+>>> cho "Fabricio" | cut -c2
+>>> a
+>>> cho "Fabricio" | cut -c2-3
+>>> ab
+
+FORMATO CSV:
+>>> echo -e "1,2,3\n4,5,6\n7,8,9" # -e -> desconsidera caracteres especiais
+>>> 1,2,3
+>>> 4,5,6
+>>> 7,8,9
+
+CRIAR ARQUIVO COM O CONTEÚDO ACIMA:
+>>> echo -e "1,2,3\n4,5,6\n7,8,9" >> matriz.csv
+>>> cat matriz.csv
+>>> 1,2,3
+>>> 4,5,6
+>>> 7,8,9
+
+PEGAR COLUNA DO TEXTO:
+>>> cat matriz.csv | cut -c1
+>>> 1
+>>> 4
+>>> 7
+>>> cat matriz.csv | cut -d"," -f1 # f1 -> campo 1
+>>> 1
+>>> 4
+>>> 7
+>>> cat matriz.csv | cut -d"," -f2
+>>> 2
+>>> 5
+>>> 8
+>>> cat matriz.csv | cut -d"," -f2-3
+>>> 2,3
+>>> 5,6
+>>> 8,9
