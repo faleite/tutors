@@ -13,7 +13,7 @@ Ir para diretório anterior| **cd -**
 Ir para a pasta home do usuario| **cd**
 Representa o diretório Home| **$HOME**
 
-##### Modo listar arquivos (ls)|
+#### Modo listar arquivos (ls)
 
 Função|Comando|
 ------|-------|
@@ -22,16 +22,15 @@ Listar todos os arquivos em formato especifico| __ls *.md__ (md = ex. de formato
 Listar arquivos ocultos e não ocultos| **ls -a**
 Listar arquivos e suas permissões| **ls -l**
 
-##### Gerenciar permissões de arquivos
+#### Gerenciar permissões de arquivos
 
 Função|Comando|
 ------|-------|
 Tipos de permissões| r (ler), w (escrever), x (executar)
 Grupo de permissões| g (geral), u (usuários), o (outros)
 Alterar permissões| **chmod** (ex. chmod o=r tarefas.md)
-___
 
-##### Criar variavel
+#### Criar variavel
 
 Função|Comando|
 ------|-------|
@@ -40,7 +39,7 @@ Mostrar o caminho da variavel| **dirname $NOME_VARIAVEL**
 Obter nome do arquivo| **basename $NOME_ARQUIVO**
 Obter nome do arquivo sem mostrar sua extenção| **basename $NOME_ARQUIVO.txt**
 
-##### Manipular arquivos e diretórios
+#### Manipular arquivos e diretórios
 
 Função|Comando|
 ------|-------|
@@ -62,7 +61,7 @@ Gerar arquivo temporário| **mktemp ./tmp.XXXX**
 tmp.XXXX| nome do arquivo
 XXXX| gera uma extensão aleatória
 
-##### Hitórico de comandos
+#### Hitórico de comandos
 
 Função|Comando|
 ------|-------|
@@ -74,7 +73,7 @@ Exibir busca no hitórico apenas com o parte do seu nome| **![parte-do-nome]** e
 Mostrar útimas 5 linhas do hitórico de comandos| **history I tail -5** (I -> Barra Lateral)
 Enviar hitórico das útimas 5 linhas de comandos p/ um arquivo| **history I tail -5 >> arquivo.txt**
 
-##### . e ..
+#### . e ..
 
 Função|Comando|
 ------|-------|
@@ -82,14 +81,14 @@ Função|Comando|
 .. | Representa o diretório acima do atual
 ./[nome-arquivo] | Acessa o arquivo no diretório atual
 
-##### Copiar arquivos e diretórios
+#### Copiar arquivos e diretórios
 
 Função|Comando|
 ------|-------|
 Copiar arquivo| **cp [nome-arquivo] [novo-nome ou local-a-salvar]**
 Copiar diretório| **cp -r [nome-diretório] [novo-nome ou local-a-salvar]**
 
-##### Exibir conteúdo dos arquivos e concatenar
+#### Exibir conteúdo dos arquivos e concatenar
 
 Função|Comando|
 ------|-------|
@@ -99,7 +98,7 @@ Exibir conteúdo de mais de um arquivo no shell| **cat arq2.txt arq1.txt**
 Concatenar texto de mais de um arquivo| **cat arq2.txt arq1.txt >> arqConcatenado.txt**
 Exibir conteúdo do arquivo com linhas numeradas no shell| **cat -n arqConcatenado.txt**
 
-##### Pipe
+#### Pipe
 
 Função|Comando|
 ------|-------|
@@ -115,7 +114,7 @@ echo "2+1" | bc -l
 >>> cat arq.txt
 >>> 5
 ``````
-##### Cut -> filtrar saídas
+#### Cut -> filtrar saídas
 
 Exemplos:
 ``````
@@ -160,7 +159,7 @@ Pegar coluna do texto:
 >>> 5,6
 >>> 8,9
 ``````
-##### head -> Exibir as primeiras linhas de arquivos
+#### head -> Exibir as primeiras linhas de arquivos
 
 Função|Comando|
 ------|-------|
@@ -173,7 +172,7 @@ Exemplo de combinção de código com **pipe** e **head**:
 >>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | head -n 1
 >>> 1,2,3
 ``````
-##### tail -> Exibir ultimas linhas de arquivos
+#### tail -> Exibir ultimas linhas de arquivos
 
 Função|Comando|
 ------|-------|
