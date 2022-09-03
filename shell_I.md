@@ -1,182 +1,148 @@
-# SHELL
-## MÓDULO I -> "COMANDOS BÁSICOS"
+# SHELL - Módulo I "Comandos Básicos"
+
+#### Comandos
+
+Função|Comando|
+------|-------|
+Exibir mensagem ou nome de uma variável| **echo $SHELL** -> [nome-variavel]
+Exemplo 1| $SHELL -> caminho do shell
+Exemplo 2| $HOME -> caminho do usuário
+Mostrar diretório atual| **pwd**
+Ir para diretório a cima| **cd ..**
+Ir para diretório anterior| **cd -**
+Ir para a pasta home do usuario| **cd**
+Representa o diretório Home| **$HOME**
+
+##### Modo listar arquivos (ls)|
+
+Função|Comando|
+------|-------|
+Exibir arquivos com seu id (hinode)| **ls -i**
+Listar todos os arquivos em formato especifico| __ls *.md__ (md = ex. de formato)
+Listar arquivos ocultos e não ocultos| **ls -a**
+Listar arquivos e suas permissões| **ls -l**
+
+##### Gerenciar permissões de arquivos
+
+Função|Comando|
+------|-------|
+Tipos de permissões| r (ler), w (escrever), x (executar)
+Grupo de permissões| g (geral), u (usuários), o (outros)
+Alterar permissões| **chmod** (ex. chmod o=r tarefas.md)
 ___
 
-##### COMANDOS
+##### Criar variavel
 
-EXIBIR MENSAGEM OU NOME DE UMA VARIÁVEL: **echo $SHELL** -> [nome-variavel]
-    - $SHELL -> caminho do shell
-    - $HOME -> caminho do usuário
+Função|Comando|
+------|-------|
+Criar uma variavel para um diretório| **NOME="/caminho_e/nome_do_arquivo.txt/"**
+Mostrar o caminho da variavel| **dirname $NOME_VARIAVEL**
+Obter nome do arquivo| **basename $NOME_ARQUIVO**
+Obter nome do arquivo sem mostrar sua extenção| **basename $NOME_ARQUIVO.txt**
 
-MOSTRAR DIRETÓRIO ATUAL: **pwd**
+##### Manipular arquivos e diretórios
 
-IR PARA DIRETÓRIO A CIMA: **cd ..**
+Função|Comando|
+------|-------|
+Remover diretorio| **rm -rf 'nome-diretorio'**
+Remover diretorio| **rmdir -r 'nome-diretorio'**
+Remover diretorio vazio| **rmdir 'nome-diretorio'**
+Remover arquivo| **rm 'nome-arquivo'**
+Remover arquivo com pedido de confirmação| **rm -i 'nome-arquivo'**
+Mover arquivo/diretório| **mv 'nome-arquivo' ~/endereço/onde/vai-mover**
+Mover todos os arquivos com a mesma extensão| **mv *.md ~/endereço/para-onde/vai-mover**
+Renomear arquivo/diretório| **mv nome-arquivo.py novo-nome.py**
+Criar arquivo| **touch nomearquivo.txt**
+Mostrar na tela o conteúdo do arquivo| **cat [nome-do-arquivo]**
+Gerar diretório| **mkdir [nome-do-diretorio]**
+Gerar diretório dentro de diretório| **mkdir -p [teste/teste1/teste3]**
+Passar mais de um comando no shell| **;** ex. -> mkdir testeCat; cd testeCat
+Gerar arquivo temporário| **mktemp ./tmp.XXXX**
+./ | diretório atual
+tmp.XXXX| nome do arquivo
+XXXX| gera uma extensão aleatória
 
-IR PARA DIRETÓRIO ANTERIOR: **cd -**
+##### Hitórico de comandos
 
-IR PARA A PASTA HOME DO USUARIO: **cd**
-
-**$HOME** REPRESENTA O DIRETÓRIO HOME
-___
-
-##### MODO LISTAR ARQUIVOS (ls):
-
-EXIBIR ARQUIVOS COM SEU ID (hinode):
-**ls -i**
-
-LISTAR TODOS OS ARQUIVOS EM FORMATO
-ESPECIFICO: **ls *.md** (md = ex. de formato)
-
-LISTAR ARQUIVOS OCULTOS E NÃO OCULTOS:
-**ls -a**
-
-LISTAR ARQUIVOS E SUAS PERMISSÕES:
-**ls -l**
-___
-
-##### GERENCIAR PERMISSÕES DE ARQUIVOS
-
-Tipos de permissões: r (ler), w (escrever),
-x (executar)
-
-Grupo de permissões: g (geral), u (usuários),
-o (outros)
-
-ALTERAR PERMISSÕES: **chmod**
-(ex. chmod o=r tarefas.md)
-___
-
-##### CRIAR VARIAVEL
-
-CRIAR UMA VARIAVEL PARA UM DIRETÓRIO:
-**NOME="/caminho_e/nome_do_arquivo.txt/"**
-
-MOSTRAR O CAMINHO DA VARIAVEL:
-**dirname $NOME_VARIAVEL**
-
-OBTER NOME DO ARQUIVO:
-**basename $NOME_ARQUIVO**
-
-OBTER NOME DO ARQUIVO SEM MOSTRAR
-SUA EXTENÇÃO:
-**basename $NOME_ARQUIVO .txt**
-(.txt = ex. de formato)
-
-##### MANIPULAR ARQUIVOS E DIRETÓRIOS:
-
-REMOVER DIRETORIO: **rm -rf 'nome-diretorio'**
-
-REMOVER DIRETORIO: **rmdir -r 'nome-diretorio'**
-
-REMOVER DIRETORIO VAZIO: **rmdir 'nome-diretorio'**
-
-REMOVER ARQUIVO: **rm 'nome-arquivo'**
-
-REMOVER ARQUIVO COM PEDIDO DE CONFIRMAÇÃO: **rm -i 'nome-arquivo'**
-
-MOVER ARQUIVO/DIRETÓRIO: **mv 'nome-arquivo' ~/endereço/para-onde/vai-mover**
-
-MOVER TODOS OS ARQUIVOS COM A MESMA EXTENSÃO: **mv *.md ~/endereço/para-onde/vai-mover**
-
-RENOMEAR ARQUIVO/DIRETÓRIO: **mv nome-arquivo.py novo-nome.py**
-
-CRIAR ARQUIVO: **touch nomearquivo.txt**
-
-MOSTRAR NA TELA O CONTEÚDO DO ARQUIVO: **cat [nome-do-arquivo]**
-
-GERAR DIRETÓRIO: **mkdir [nome-do-diretorio]**
-
-GERAR DIRETÓRIO DENTRO DE DIRETÓRIO: **mkdir -p [teste/teste1/teste3]**
-
-PASSAR MAIS DE UM COMANDO NO SHELL: **;** ex. -> mkdir testeCat; cd testeCat
-(Os comando são separados por **;**)
-
-GERAR ARQUIVO TEMPORÁRIO: **mktemp ./tmp.XXXX**
-* ./ -> diretório atual
-* tmp.XXXX -> nome do arquivo
-* XXXX -> gera uma extensão aleatória
-
-##### HITÓRICO DE COMANDOS
-
-EXIBIR HITÓRICO DE COMANDOS: **history**
-
-EXECUTAR COMANDO ATRAVÉS DO NUMERO DO SEU HITÓRICO: **![numero-do-comando]**
-
-EXECUTAR ÚLTIMO COMANDO: **!!**
-
-EXIBIR COMANDO ATRAVÉS DE BUSCA NO HITÓRICO APENAS COM O PARTE DO SEU NOME:
-**![parte-do-nome]** ex. **!echo**
-(Para buscar ele percorre o histórico de traz para frente)
-
-MOSTRAR ÚTIMAS 5 LINHAS DO HITÓRICO DE COMANDOS: **history | tail -5**
-
-ENVIAR O HITÓRICO DAS ÚTIMAS 5 LINHAS DE COMANDOS PARA UM ARQUIVO:
-**history | tail -5 >> arquivo.txt**
+Função|Comando|
+------|-------|
+Exibir hitórico de comandos| **history**
+Executar comando através do numero do seu hitórico| **![numero-do-comando]**
+Executar último comando| **!!**
+Exibir busca no hitórico apenas com o parte do seu nome| **![parte-do-nome]** ex. **!echo**
+/\ *Para buscar ele percorre o histórico de traz para frente
+Mostrar útimas 5 linhas do hitórico de comandos| **history I tail -5** (I -> Barra Lateral)
+Enviar hitórico das útimas 5 linhas de comandos p/ um arquivo| **history I tail -5 >> arquivo.txt**
 
 ##### . e ..
 
-. -> REPRESENTA O DIRETÓRIO ATUAL
+Função|Comando|
+------|-------|
+. | Representa o diretório atual
+.. | Representa o diretório acima do atual
+./[nome-arquivo] | Acessa o arquivo no diretório atual
 
-.. -> REPRESENTA O DIRETÓRIO ACIMA DO ATUAL
+##### Copiar arquivos e diretórios
 
-./[nome-arquivo] -> ACESSA O ARQUIVO NO DIRETÓRIO ATUAL
+Função|Comando|
+------|-------|
+Copiar arquivo| **cp [nome-arquivo] [novo-nome ou local-a-salvar]**
+Copiar diretório| **cp -r [nome-diretório] [novo-nome ou local-a-salvar]**
 
-##### COPIAR ARQUIVOS E DIRETÓRIOS
+##### Exibir conteúdo dos arquivos e concatenar
 
-COPIAR ARQUIVO: **cp [nome-arquivo] [novo-nome ou local-a-salvar]**
+Função|Comando|
+------|-------|
+Enviar texto para arquivo pelo shell| **echo "linha do texto" >> nome-arquivo.txt**
+Exibir conteúdo do arquivo no shell| **cat nome-arquivo.txt**
+Exibir conteúdo de mais de um arquivo no shell| **cat arq2.txt arq1.txt**
+Concatenar texto de mais de um arquivo| **cat arq2.txt arq1.txt >> arqConcatenado.txt**
+Exibir conteúdo do arquivo com linhas numeradas no shell| **cat -n arqConcatenado.txt**
 
-COPIAR DIRETÓRIO: **cp -r [nome-diretório] [novo-nome ou local-a-salvar]**
+##### Pipe
 
-##### EXIBIR CONTEÚDO DOS ARQUIVOS E CONCATENAR
-
-ENVIAR TEXTO PARA ARQUIVO PELO SHELL: **echo "linha do texto" >> nome-arquivo.txt**
-
-EXIBIR CONTEÚDO DO ARQUIVO NO SHELL: **cat nome-arquivo.txt**
-
-EXIBIR CONTEÚDO DE MAIS DE UM ARQUIVO NO SHELL: **cat arq2.txt arq1.txt**
-
-CONCATENAR TEXTO DE MAIS DE UM ARQUIVO: **cat arq2.txt arq1.txt >> arqConcatenado.txt**
-
-EXIBIR CONTEÚDO DO ARQUIVO COM LINHAS NUMERADAS NO SHELL: **cat -n arqConcatenado.txt**
-
-##### PIPE
-
-ESCREVER CODIGO EM MAIS DE UMA LINMHA NO SHELL: **\** -> Para continuar na proxima linha
-
-CALCULADORA DO SHELL COM FLOAT: **bc -l**
-
-EXECUTAR MAIS DE UM COMANDO NO SHELL: **|** -> ex.
->>> echo "2+1" | bc -l
->>> 3
-
+Função|Comando|
+------|-------|
+Escrever codigo em mais de uma linmha no shell| **\** -> Para continuar na proxima linha
+Calculadora do shell com float| **bc -l**
+Executar mais de um comando no shell| **I** (Barra Lateral) ex:
+```
+echo "2+1" | bc -l
+3
+```
+``````
 >>> ec>ho "2+3" | bc -l >> arq.txt
 >>> cat arq.txt
 >>> 5
+``````
+##### Cut -> filtrar saídas
 
-##### CUT -> FILTRAR SAÍDAS
-
-EXEMPLOS:
->> echo "Fabricio" | cut -c1
+Exemplos:
+``````
+>>> echo "Fabricio" | cut -c1
 >>> F
 >>> cho "Fabricio" | cut -c2
 >>> a
 >>> cho "Fabricio" | cut -c2-3
 >>> ab
-
-FORMATO CSV:
+``````
+Formato csv:
+``````
 >>> echo -e "1,2,3\n4,5,6\n7,8,9" # -e -> desconsidera caracteres especiais
 >>> 1,2,3
 >>> 4,5,6
 >>> 7,8,9
-
-CRIAR ARQUIVO COM O CONTEÚDO ACIMA:
+``````
+Criar arquivo com o conteúdo acima:
+``````
 >>> echo -e "1,2,3\n4,5,6\n7,8,9" >> matriz.csv
 >>> cat matriz.csv
 >>> 1,2,3
 >>> 4,5,6
 >>> 7,8,9
-
-PEGAR COLUNA DO TEXTO:
+``````
+Pegar coluna do texto:
+``````
 >>> cat matriz.csv | cut -c1
 >>> 1
 >>> 4
@@ -193,33 +159,37 @@ PEGAR COLUNA DO TEXTO:
 >>> 2,3
 >>> 5,6
 >>> 8,9
+``````
+##### head -> Exibir as primeiras linhas de arquivos
 
-##### head -> EXIBIR AS PRIMEIRAS LINHAS DE ARQUIVOS
+Função|Comando|
+------|-------|
+Exibir as dez primeiras linhas| **head [nome-arquivo]**
+Exibir numeros de linhas desejado| **head -n 3 [nome-arquivo]** # 3 (numero de linhas)
+Exibir numeros de linhas desejado de varios arquivos| **head -n 3 [nome-arq-1] [nome-arq-2]**
 
-EXIBIR AS DEZ PRIMEIRAS LINHAS: **head [nome-arquivo]**
-
-EXIBIR NUMEROS DE LINHAS DESEJADO: **head -n 3 [nome-arquivo]** # 3 (numero de linhas)
-
-EXIBIR NUMEROS DE LINHAS DESEJADO DE VARIOS ARQUIVOS: **head -n 3 [nome-arq-1] [nome-arq-2]**
-
-EXEMPLO DE COMBINÇÃO DE CÓDIGO COM **PIPE** E **HEAD**:
+Exemplo de combinção de código com **pipe** e **head**:
+``````
 >>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | head -n 1
 >>> 1,2,3
+``````
+##### tail -> Exibir ultimas linhas de arquivos
 
-##### tail -> EXIBIR ULTIMAS LINHAS DE ARQUIVOS
+Função|Comando|
+------|-------|
+Exibir as dez últimas linhas| **tail [nome-arquivo]**
+Exibir últimos numeros de linhas desejado| **tail -n 3 [nome-arquivo]** # 3 (numero de linhas)
 
-EXIBIR AS DEZ ÚLTIMAS LINHAS: **tail [nome-arquivo]**
-
-EXIBIR ÚLTIMOS NUMEROS DE LINHAS DESEJADO: **tail -n 3 [nome-arquivo]** # 3 (numero de linhas)
-
-EXEMPLO DE COMBINÇÃO DE CÓDIGO COM **PIPE** E **HEAD**:
+Exemplo de combinção de código com **pipe** e **tail**:
+``````
 >>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | tail -n 2 >> tail.txt
 >>> cat tail.txt
 >>> 7,8,9
 >>> 10,11,12
-
-MONITORAR UM ARQUIVO: **tail -f [nome-arquivo]**
-(Mostra no shell as alteraçoes do arquivo em tempo real)
-
-TEMPORIZAR COMANDOS: **sleep 5; echo "Dormi por 5 segundos"
-**sleep 5; echo "Nova linha" >> novo-arquivo.txt**
+``````
+Função|Comando|
+------|-------|
+Monitorar um arquivo| **tail -f [nome-arquivo]**
+/\ *Mostra no shell as alteraçoes do arquivo em tempo real
+Temporizar comandos| **sleep 5; echo "Dormi por 5 segundos"**
+Temporizar comandos| **sleep 5; echo "Nova linha" >> arquivo.txt**
