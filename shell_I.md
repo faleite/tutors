@@ -1,4 +1,5 @@
 # SHELL
+## MÓDULO I -> "COMANDOS BÁSICOS"
 ___
 
 ##### COMANDOS
@@ -192,3 +193,33 @@ PEGAR COLUNA DO TEXTO:
 >>> 2,3
 >>> 5,6
 >>> 8,9
+
+##### head -> EXIBIR AS PRIMEIRAS LINHAS DE ARQUIVOS
+
+EXIBIR AS DEZ PRIMEIRAS LINHAS: **head [nome-arquivo]**
+
+EXIBIR NUMEROS DE LINHAS DESEJADO: **head -n 3 [nome-arquivo]** # 3 (numero de linhas)
+
+EXIBIR NUMEROS DE LINHAS DESEJADO DE VARIOS ARQUIVOS: **head -n 3 [nome-arq-1] [nome-arq-2]**
+
+EXEMPLO DE COMBINÇÃO DE CÓDIGO COM **PIPE** E **HEAD**:
+>>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | head -n 1
+>>> 1,2,3
+
+##### tail -> EXIBIR ULTIMAS LINHAS DE ARQUIVOS
+
+EXIBIR AS DEZ ÚLTIMAS LINHAS: **tail [nome-arquivo]**
+
+EXIBIR ÚLTIMOS NUMEROS DE LINHAS DESEJADO: **tail -n 3 [nome-arquivo]** # 3 (numero de linhas)
+
+EXEMPLO DE COMBINÇÃO DE CÓDIGO COM **PIPE** E **HEAD**:
+>>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | tail -n 2 >> tail.txt
+>>> cat tail.txt
+>>> 7,8,9
+>>> 10,11,12
+
+MONITORAR UM ARQUIVO: **tail -f [nome-arquivo]**
+(Mostra no shell as alteraçoes do arquivo em tempo real)
+
+TEMPORIZAR COMANDOS: **sleep 5; echo "Dormi por 5 segundos"
+**sleep 5; echo "Nova linha" >> novo-arquivo.txt**
