@@ -192,3 +192,26 @@ Monitorar um arquivo| **tail -f [nome-arquivo]**
 /\ *Mostra no shell as alteraçoes do arquivo em tempo real
 Temporizar comandos| **sleep 5; echo "Dormi por 5 segundos"**
 Temporizar comandos| **sleep 5; echo "Nova linha" >> arquivo.txt**
+
+#### Método "seq" para exibir sequência de numeros
+
+Função|Comando|
+------|-------|
+Exiber sequência de numeros de 0 a 5| **seq 0 1 5** (0 = inicio; 1 = passo; 5 = final)
+Salvar sequência de numeros em arquivo| **seq 1 1 3 >> numeros.txt**
+Salvar sequência de numeros em uma variável| **lista=$(seq 0 1 5)**
+Mostar o conteúdo da variável| **echo $lista**
+
+**Exemplo de código com "seq"**:
+```
+for n in $(seq 0 1 5)
+for> do
+for> echo "valor de $n"
+for> done
+valor de 0
+valor de 1
+valor de 2
+valor de 3
+valor de 4
+valor de 5
+
