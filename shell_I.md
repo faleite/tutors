@@ -105,7 +105,7 @@ Função|Comando|
 Escrever codigo em mais de uma linmha no shell| **\** -> Para continuar na proxima linha
 Calculadora do shell com float| **bc -l**
 Executar mais de um comando no shell| **I** (Barra Lateral) ex:
-```
+```sh
 echo "2+1" | bc -l
 3
 ```
@@ -117,7 +117,7 @@ echo "2+1" | bc -l
 #### Cut -> filtrar saídas
 
 Exemplos:
-``````
+``````sh
 >>> echo "Fabricio" | cut -c1
 >>> F
 >>> cho "Fabricio" | cut -c2
@@ -126,14 +126,14 @@ Exemplos:
 >>> ab
 ``````
 Formato csv:
-``````
+``````sh
 >>> echo -e "1,2,3\n4,5,6\n7,8,9" # -e -> desconsidera caracteres especiais
 >>> 1,2,3
 >>> 4,5,6
 >>> 7,8,9
 ``````
 Criar arquivo com o conteúdo acima:
-``````
+``````sh
 >>> echo -e "1,2,3\n4,5,6\n7,8,9" >> matriz.csv
 >>> cat matriz.csv
 >>> 1,2,3
@@ -141,7 +141,7 @@ Criar arquivo com o conteúdo acima:
 >>> 7,8,9
 ``````
 Pegar coluna do texto:
-``````
+``````sh
 >>> cat matriz.csv | cut -c1
 >>> 1
 >>> 4
@@ -168,7 +168,7 @@ Exibir numeros de linhas desejado| **head -n 3 [nome-arquivo]** # 3 (numero de l
 Exibir numeros de linhas desejado de varios arquivos| **head -n 3 [nome-arq-1] [nome-arq-2]**
 
 Exemplo de combinção de código com **pipe** e **head**:
-``````
+``````sh
 >>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | head -n 1
 >>> 1,2,3
 ``````
@@ -180,7 +180,7 @@ Exibir as dez últimas linhas| **tail [nome-arquivo]**
 Exibir últimos numeros de linhas desejado| **tail -n 3 [nome-arquivo]** # 3 (numero de linhas)
 
 Exemplo de combinção de código com **pipe** e **tail**:
-``````
+``````sh
 >>> echo -e "1,2,3\n4,5,6\n7,8,9\n10,11,12" | tail -n 2 >> tail.txt
 >>> cat tail.txt
 >>> 7,8,9
@@ -193,7 +193,7 @@ Monitorar um arquivo| **tail -f [nome-arquivo]**
 Temporizar comandos| **sleep 5; echo "Dormi por 5 segundos"**
 Temporizar comandos| **sleep 5; echo "Nova linha" >> arquivo.txt**
 
-#### Método "seq" para exibir sequência de numeros
+#### Exibir sequência de numeros com "seq"
 
 Função|Comando|
 ------|-------|
@@ -203,7 +203,7 @@ Salvar sequência de numeros em uma variável| **lista=$(seq 0 1 5)**
 Mostar o conteúdo da variável| **echo $lista**
 
 **Exemplo de código com "seq"**:
-```
+``````sh
 for n in $(seq 0 1 5)
 for> do
 for> echo "valor de $n"
@@ -214,4 +214,50 @@ valor de 2
 valor de 3
 valor de 4
 valor de 5
+``````
+#### Exibir números de linhas, palavras e caracteres com "wc"
 
+Função|Comando|
+------|-------|
+Criar arquivo com quebra de linha| **echo -e "Linha 1\nLinha 2\nLinha 3" > texto.txt**
+Mostrar conteúdo do arquivo| **cat texto.txt**
+Exibir número de linhas, palavras e caracteres| **wc texto.txt**
+Exibir número de linhas| **wc -l texto.txt**
+Exibir número de palavras| **wc -w texto.txt**
+Exibir número de caracteres| **wc -m texto.txt**
+Exibir conteúdo com espaço vazio como separador| **wc -m texto.txt &#124; cut -d" " -f7**
+
+#### Gerar arquivos de log das saídas de um pipe com "Tee"
+
+Função|Comando|
+------|-------|
+Gerar arquivo de log| **echo "1,2,3" &#124; tee log.txt &#124; wc**
+Adicionar texto ao arquivo de log| **echo "1,2,3" &#124; tee -a log.txt &#124; wc**
+Observação:| Por padrão o comando sem o "-a" rescreve arquivo original
+
+#### Date
+
+Comando|Saída|
+------|-------|
+**date**| Sáb 10 Set 2022 17:30:50 WEST
+**date -u**| Sáb 10 Set 2022 16:30:53 UTC
+**date +%d/%m/%y**| 10/09/22
+**date +%d/%m/%Y**| 10/09/2022
+%A | dia da semana (domingo, …, sábado).
+%B | nome do mês (janeiro, …, dezembro).
+%H | hora do dia (0 a 23).
+%M | minuto (0 a 59).
+%S | segundos (0 a 61).
+%T | hora no formato hh:mm:ss.
+%Y | ano.
+%a | dia da semana abreviado (dom, …, sab).
+%b | nome do mês abreviado (jan, …, dez).
+%c | dia da semana, data e hora.
+%d | dia do mês.
+%j | dia ano (1 a 366).
+%m | mês (1 a 12).
+%s | número de segundos desde das zero horas de 01/01/1970.
+%w | dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
+%x | representação da data local.
+%y | os dois últimos dígitos do ano.
+**+**| específica a escrita de um formato
