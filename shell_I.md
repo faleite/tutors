@@ -243,21 +243,49 @@ Comando|Saída|
 **date -u**| Sáb 10 Set 2022 16:30:53 UTC
 **date +%d/%m/%y**| 10/09/22
 **date +%d/%m/%Y**| 10/09/2022
-%A | dia da semana (domingo, …, sábado).
-%B | nome do mês (janeiro, …, dezembro).
-%H | hora do dia (0 a 23).
-%M | minuto (0 a 59).
-%S | segundos (0 a 61).
-%T | hora no formato hh:mm:ss.
-%Y | ano.
-%a | dia da semana abreviado (dom, …, sab).
-%b | nome do mês abreviado (jan, …, dez).
-%c | dia da semana, data e hora.
-%d | dia do mês.
-%j | dia ano (1 a 366).
-%m | mês (1 a 12).
-%s | número de segundos desde das zero horas de 01/01/1970.
-%w | dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
-%x | representação da data local.
-%y | os dois últimos dígitos do ano.
+**%A** | dia da semana (domingo, …, sábado).
+**%B** | nome do mês (janeiro, …, dezembro).
+**%H** | hora do dia (0 a 23).
+**%M** | minuto (0 a 59).
+**%S** | segundos (0 a 61).
+**%T** | hora no formato hh:mm:ss.
+**%Y** | ano.
+**%a** | dia da semana abreviado (dom, …, sab).
+**%b** | nome do mês abreviado (jan, …, dez).
+**%c** | dia da semana, data e hora.
+**%d** | dia do mês.
+**%j** | dia ano (1 a 366).
+**%m** | mês (1 a 12).
+**%s** | número de segundos desde das zero horas de 01/01/1970.
+**%w** | dia da semana, onde 0 = domingo, 1 = segunda, …, 6 = sábado.
+**%x** | representação da data local.
+**%y** | os dois últimos dígitos do ano.
 **+**| específica a escrita de um formato
+**%**| para informar um descritor de formato
+**date +%d%%%m%%%Y**| 12%09%2022 *(usou % como separador)*
+**date +%d%t%m%t%Y**| 12      09      2022 *(t = Tab como separador)*
+**date +%d%n%m%n%Y**|12 *(n = quebra de linha como separador)*
+-|09
+-|2022
+
+#### Inverter sequência de caracteres com o "rev"
+````````````
+rev
+fabricio araujo
+ojuara oicirbaf
+1,2,3,4,5
+5,4,3,2,1
+^C # ctrl-c para sair
+````````````
+Função|Comando|
+------|-------|
+Gerar texto dentro de um arquivo| **echo fabricio,37,faleite@gmail.com,123 >> usuario.txt**
+Pegar o quarto (último) campo do formulário| **cat usuario.txt &#124; cut -d"," -f4** *(>>> 123)*
+
+Entrada|Saída|
+------|-------|
+**cat usuario.txt**| fabricio,araujo,37,faleite@gmail.com,123
+
+Comando para pegar o ultimo campo|Saída|
+------|-------|
+**cat usuario.txt &#124; rev &#124; cut -d"," -f1 &#124; rev**|>>> 123
