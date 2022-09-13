@@ -1,4 +1,4 @@
-# SHELL - Módulo I "Comandos Básicos"
+# SHELL - Módulo I "Comandos Básicosg
 
 #### Comandos
 
@@ -289,3 +289,36 @@ Entrada|Saída|
 Comando para pegar o ultimo campo|Saída|
 ------|-------|
 **cat usuario.txt &#124; rev &#124; cut -d"," -f1 &#124; rev**|>>> 123
+
+#### Concatenar arquivos por colunas com o "paste"
+
+Mostrar mais de um arquivo no shell, por linha com o **cat**:
+```sh
+$ cat usuario.txt usuario2.txt
+fabricio,araujo,37,faleite@gmail.com,123
+Bento,Perini,4,bento@gmail.com,456
+```
+Mostrar mais de um arquivo no shell, por coluna:
+```sh
+$ paste usuario.txt usuario2.txt
+fabricio,araujo,37,faleite@gmail.com,123        Bento,Perini,4,bento@gmail.com,456
+```
+Mostrar mais de um arquivo no shell, por coluna com o **:** como separador:
+```sh
+$ paste usuario.txt usuario2.txt
+fabricio,araujo,37,faleite@gmail.com,123:Bento,Perini,4,bento@gmail.com,456
+```
+Mostrar mais de um arquivo no shell, por linha com o **paste**:
+```sh
+$ paste -d"\n" usuario.txt usuario2.txt
+fabricio,araujo,37,faleite@gmail.com,123
+Bento,Perini,4,bento@gmail.com,456
+```
+Concatenar mais de um arquivo em um novo arquivo:
+```sh
+$ paste -d"\n" usuario.txt usuario2.txt >> cadastro.txt
+$ cat cadastro.txt
+fabricio,araujo,37,faleite@gmail.com,123
+Bento,Perini,4,bento@gmail.com,456
+```
+
