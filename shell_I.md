@@ -268,6 +268,17 @@ Comando|Saída|
 -|09
 -|2022
 
+#### Exibir calendário com o "cal"
+
+Função|Comando|
+------|-------|
+Exibir calendário do mês atual| **cal**
+Exibir três meses de calendário, mês anterior, atual e posterior| **cal -3**
+Exibir calendário do ano atual| **cal -y**
+Exibir calendário de ano específico| **cal -y 2024**
+Exibir calendário de mês específica| **cal -m 10**
+Exibir manual do comando cal| **man cal**
+
 #### Inverter sequência de caracteres com o "rev"
 ````````````
 rev
