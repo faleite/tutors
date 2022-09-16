@@ -333,3 +333,58 @@ fabricio,araujo,37,faleite@gmail.com,123
 Bento,Perini,4,bento@gmail.com,456
 ```
 
+#### Oganizar lista em ordem alfabética e numérica com o "sort"
+
+Mostra no shell uma lista de strings:
+```sh
+$ echo -e "um\ndois\ntrês"
+um
+dois
+três
+```
+Organizando a lista com o sort:
+```sh
+$ echo -e "um\ndois\ntrês" | sort
+dois
+três
+um
+```
+Cria arquivo com a lista de strings:
+```sh
+ ~ echo -e "um\ndois\ntrês" > numeros.txt
+ ~ cat numeros.txt
+um
+dois
+três
+```
+Organizando a lista do arquivo com o sort:
+```sh
+~ sort numeros.txt
+dois
+três
+um
+```
+Incluir uma linha ao final do arquivo:
+```sh
+~ echo "um" >> numeros.txt
+~ cat numeros.txt
+um
+dois
+três
+um
+```
+Organizando a lista do arquivo com o sort:
+```sh
+~ sort numeros.txt
+dois
+três
+um
+um
+```
+Usando sort com -u (unique) organiza e elimina itens repetidos:
+```sh
+~ sort -u numeros.txt
+dois
+três
+um
+```
