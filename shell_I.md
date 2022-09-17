@@ -1,4 +1,4 @@
-# SHELL - Módulo I "Comandos Básicosg
+# Shell - Módulo I - *"Comandos Básicos"*
 
 #### Comandos
 
@@ -387,4 +387,63 @@ Usando sort com -u (unique) organiza e elimina itens repetidos:
 dois
 três
 um
+```
+
+#### Oganizar lista por coluna e na ordem inversa o "sort"
+
+Pegar a lista de um arquivo, ordenar e salvar em um novo arquivo:
+```sh
+$ sort numeros.txt -o novo.txt
+$ cat novo.txt
+dois
+três
+um
+um
+```
+
+Criar um novo arquivo com dados e juntar dois arquivos formando duas colunas:
+```sh
+$ echo -e "2\n1\n4\n3" >> numeros2.txt
+$ paste numeros.txt numeros2.txt
+um      2
+dois    1
+três    4
+um      3
+```
+
+Juntar dois arquivos em dua colunas e salva os dados em um novo arquivo:
+```sh
+$ paste numeros.txt numeros2.txt >> arquivo.txt
+$ cat arquivo.txt
+um      2
+dois    1
+três    4
+um      3
+```
+
+Ordenar o arquivo pela segunda coluna:
+```sh
+$ sort -k2 arquivo.txt
+dois    1
+um      2
+um      3
+três    4
+```
+
+Ordenar lista do arquivo de forma inversa com o reverse (-r):
+```sh
+$ sort -r arquivo.txt
+um      3
+um      2
+três    4
+dois    1
+```
+
+Ordenar lista do arquivo de forma inversa pela segunda coluna:
+```sh
+$ sort -r arquivo.txt -k2
+três    4
+um      3
+um      2
+dois    1
 ```
