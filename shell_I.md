@@ -447,3 +447,63 @@ um      3
 um      2
 dois    1
 ```
+
+Ordenar lista de forma numérica em um arquivo:
+```sh
+$ sort -t"-" -k3 -n arquivo.txt
+```
+Comando|Função|
+------|-------|
+sort| ordernar listas
+-t"-"| separador (neste caso o "-" é o parâmetro)
+-k3 | aplica-se a funçao na terceira coluna
+-n| ordena de forma númerica
+arquivo.txt| nome do arquivo a qual será aplicado o comando
+
+#### Executar comandos em loop sem usar laços, com o "xargs"
+Criar vários diretórios:
+```sh
+$ echo "um dois tres" | xargs mkdir
+```
+Remover vários diretórios, mostrando o comando ao usuário:
+```sh
+$ echo "um dois tres" | xargs -t rm -r
+rm -r um dois tres
+```
+Criar vários diretórios, um a um, e pedir confirmção y\n:
+```sh
+$ echo "um dois tres" | xargs -n 1 -p mkdir
+mkdir um?...y
+mkdir dois?...n
+mkdir tres?...
+```
+Remover vários diretórios, um a um, e pedir confirmção y\n:
+```sh
+$ echo "um dois tres" | xargs -n 1 -p rm -r
+rm -r um?...y
+rm -r dois?...n
+rm -r tres?...n
+```
+Criar vários arquivos, um a um, com o formato txt e pedir confirmção y\n:
+```sh
+$ echo -e "um\ndois\ntres" | xargs \
+pipe> -I % -p bash -c 'touch %.txt'
+bash -c touch um.txt?...y
+bash -c touch dois.txt?...y
+bash -c touch tres.txt?...n
+```
+Listar arquivos em uma coluna:
+```sh
+$ ls -1
+dois.txt
+texto.txt
+um.txt
+```
+Remover arquivos com "ls" e pedido de confirmção y\n:
+```sh
+$ ls -1 | xargs \
+pipe> -I % -p bash -c 'rm %'
+bash -c rm dois.txt?...n
+bash -c rm texto.txt?...y
+bash -c rm um.txt?...y
+```
