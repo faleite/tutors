@@ -507,3 +507,15 @@ bash -c rm dois.txt?...n
 bash -c rm texto.txt?...y
 bash -c rm um.txt?...y
 ```
+
+#### Editor de fluxo de texto do terminal "sed" (screen editor)
+
+Função|Comando|
+------|-------|
+ls *.txt| *Listar arquivos apenas no formato específico*
+ls *[0-9].txt| *Listar arquivos no formato .txt e que contenha no nome números entre 0 e 9*
+sed -n '1p' texto.txt| *Listar com o "sed" primeira linha do arquivo. '1p' -> 1 = linha, p = print*
+sed -n '/galera/p' texto.txt| *Listar linhas que contenha a palavra "galera"*
+sed -n '1,3p' texto.txt| *Listar as linhas de 1 a 3*
+sed -n '/e$/p' texto.txt| *Listar linhas que finalizam com a letra e. "$" representa o fim da linha*
+sed -n '/^O/p' texto.txt| *Listar linhas que iniciam com a letra O. "^" representa o inicio da linha*
