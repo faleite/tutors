@@ -519,3 +519,7 @@ sed -n '/galera/p' texto.txt| *Listar linhas que contenha a palavra "galera"*
 sed -n '1,3p' texto.txt| *Listar as linhas de 1 a 3*
 sed -n '/e$/p' texto.txt| *Listar linhas que finalizam com a letra e. "$" representa o fim da linha*
 sed -n '/^O/p' texto.txt| *Listar linhas que iniciam com a letra O. "^" representa o inicio da linha*
+sed 's/Testo/Texto/' texto.txt| *Mostrar na tela arquivo com a substituição da palavra 'Testo' para 'Texto'*
+sed -i -e 's/Testo/Texto/;s/qualque/qualquer/' texto.txt| *Alterar palavras no arquivo*
+sed -i -e '3,5s/^/# /' texto.txt| *incluir comentário no inicio das linhas 3, 4 e 5*
+sed -i -e '/galera/s/$/ Isso é um comentário/' texto.txt| *Incluir texto no final da linha que contém a palavra galera*
