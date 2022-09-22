@@ -510,7 +510,7 @@ bash -c rm um.txt?...y
 
 #### Editor de fluxo de texto do terminal "sed" (screen editor)
 
-Função|Comando|
+Comando|Função|
 ------|-------|
 ls *.txt| *Listar arquivos apenas no formato específico*
 ls *[0-9].txt| *Listar arquivos no formato .txt e que contenha no nome números entre 0 e 9*
@@ -522,4 +522,13 @@ sed -n '/^O/p' texto.txt| *Listar linhas que iniciam com a letra O. "^" represen
 sed 's/Testo/Texto/' texto.txt| *Mostrar na tela arquivo com a substituição da palavra 'Testo' para 'Texto'*
 sed -i -e 's/Testo/Texto/;s/qualque/qualquer/' texto.txt| *Alterar palavras no arquivo*
 sed -i -e '3,5s/^/# /' texto.txt| *incluir comentário no inicio das linhas 3, 4 e 5*
-sed -i -e '/galera/s/$/ Isso é um comentário/' texto.txt| *Incluir texto no final da linha que contém a palavra galera*
+sed -i -e '/galera/s/$/ Isso é um comentário/' texto.txt| *Inclui texto no fim da linha onde há a palavra galera*
+sed -ie 's/BUG//' texto.txt| *Substituir uma palavra BUG de cada linha, por espaço vazio*
+sed -ie 's/BUG//g' texto.txt| *Substituir todas as palavras BUG do texto, por espaço vazio*
+sed -ie '/^\*/d' texto.txt| *Deletar todos os * a partir do inicio da linha*
+sed '6d' texto.txt| *Mostrar no shell texto com a linha 6 deletada*
+sed -ie '6d' texto.txt| *Deletar a linha 6 do texto*
+sed '6d' texto.txt >> novo.txt| *Enviar dados do arq para novo arq, com a linha 6 deletada*
+sed '/\.$/d' texto.txt| *Mostrar no shell aquivo com o . ao final da linha deletado*
+sed -ie '/\.$/d' texto.txt| *Deletar . ao final da linha*
+
