@@ -517,7 +517,7 @@ ls *[0-9].txt| *Listar arquivos no formato .txt e que contenha no nome números 
 sed -n '1p' texto.txt| *Listar com o "sed" primeira linha do arquivo. '1p' -> 1 = linha, p = print*
 sed -n '/galera/p' texto.txt| *Listar linhas que contenha a palavra "galera"*
 sed -n '1,3p' texto.txt| *Listar as linhas de 1 a 3*
-sed -n '/e$/p' texto.txt| *Listar linhas que finalizam com a letra e. "$" representa o fim da linha*
+bsed -n '/e$/p' texto.txt| *Listar linhas que finalizam com a letra e. "$" representa o fim da linha*
 sed -n '/^O/p' texto.txt| *Listar linhas que iniciam com a letra O. "^" representa o inicio da linha*
 sed 's/Testo/Texto/' texto.txt| *Mostrar na tela arquivo com a substituição da palavra 'Testo' para 'Texto'*
 sed -i -e 's/Testo/Texto/;s/qualque/qualquer/' texto.txt| *Alterar palavras no arquivo*
@@ -532,3 +532,28 @@ sed '6d' texto.txt >> novo.txt| *Enviar dados do arq para novo arq, com a linha 
 sed '/\.$/d' texto.txt| *Mostrar no shell aquivo com o . ao final da linha deletado*
 sed -ie '/\.$/d' texto.txt| *Deletar . ao final da linha*
 
+#### Pesquisar strings em arquivo de texto com o "grep"
+**grep - Globally search a regular expression and print**
+
+Comando|Função|
+------|-------|
+cat -n texto.txt| *Printar arquivo no shell com linhas enumeradas*
+grep -n BUG texto.txt| *Printar número e linha onde contém a palavra BUG*
+grep -v BUG texto.txt| *Printar arquivo no shell, eliminando a linha que contém a palavra BUG*
+grep -c BUG texto.txt| *Printar números de linhas que contém a palavra BUG*
+grep -o BUG texto.txt| *Printar todas as palavras BUG do arquivo*
+grep -B 2 galera texto.txt|*Printar linha que contém a palavra galera mais as duas linhas anterior*
+grep -A 2 galera texto.txt|*Printar linha que contém a palavra galera mais as duas linhas posterior*
+grep -C 2 galera texto.txt|*Printar linha com a palavra galera com duas linhas anterior e posterior*
+grep -q galera texto.txt|*Informar se contém a palavra galera no arquivo*
+echo $?| *Informa resultado do cmd anterior, se True retorna 0 se False retorna 1*
+
+*Exemplo:*
+```sh
+grep -q galera texto.txt
+echo $?
+0
+grep -q galerax texto.txt
+echo $?
+1
+```
