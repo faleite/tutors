@@ -557,3 +557,12 @@ grep -q galerax texto.txt
 echo $?
 1
 ```
+
+#### Tree: Lista hierárquica de diretórios em formato de árvore
+
+Comando|Função|
+------|-------|
+brew install tree| *instalar o tree no terminal do mac*
+tree| *Mostrar arquivos e diretórios em formato de árvore*
+tree pasta| *Mostrar arquivos e diretórios de um diretório especifico*
+tree pasta -o file.txt| *Salvar a árvore de arq e diretórios em um arquivo*
