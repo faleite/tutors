@@ -558,6 +558,7 @@ echo $?
 1
 ```
 
+
 #### Tree: Lista hierárquica de diretórios em formato de árvore
 
 Comando|Função|
@@ -566,3 +567,48 @@ brew install tree| *instalar o tree no terminal do mac*
 tree| *Mostrar arquivos e diretórios em formato de árvore*
 tree pasta| *Mostrar arquivos e diretórios de um diretório especifico*
 tree pasta -o file.txt| *Salvar a árvore de arq e diretórios em um arquivo*
+
+
+#### Criar links simbólicos e hardlinks no shell com "ln"
+
+Tipos|Função
+---|---
+link simbólico| *Atalho com inode diferente, se quebrar arquivo, quebra o link*
+hard link| *Atalho como o mesmo inode (id), se quebrar arquivo, não quebra o link*
+
+Comando|Função|
+------|-------|
+touch arq.txt| *Criar um arquivo*
+ls -i| *Mostar o id (inode) do arquivo*
+rm *.txt| *Deleter todas os arquivos no formato .txt*
+ln -s past1/past2/arq.txt linksimbolico|*Criar link simbólico*
+file linksimbolico| *Mostrar o tipo de arquivo*
+ll ou ls -l| *Mostra info do arquivo como permissões, tamanho, local e data*
+ln pasta1/pasta2/arquivos/arq.txt hardlink| *Criar hard link*
+
+
+**Exemplo de uso de links**
+```sh
+echo "echo 'Versão 1.0'" >> lib1.0.sh # Criar script sh
+chmod +x lib1.0.sh # Dar permissão de uso do script
+./lib1.0.sh # Acessar script
+Versão 1.0
+```
+```sh
+echo "echo ./lib/link_lib" >> main.sh # script que acessa link
+chmod +x main.sh
+ln -s lib/lib1.0.sh link_lib # criar link
+ln -s -f lib/lib2.0.sh link_lib # Força mudança da path do link
+./main.sh
+Versão 2.0
+```
+
+
+#### Acessar documentação do shell
+
+Comando|Função|
+------|-------|
+man ls| *Mostrar documentção da funçao ls*
+man man| *Mostrar documentação da documentação*
+man -f ls| *Mostrar documentação sucinta da função ls*
+man -w ls| *Mostrar path da documentação de ls*
