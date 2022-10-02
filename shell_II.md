@@ -98,3 +98,88 @@ ${NOME} # Proteção de variável
 VAR="${NOME}sou uma variável!"
 VAR="$NOMEsou uma variável!"
 ```
+
+#### Script para calcular idade de usuário
+
+*Exemplo script.sh:*
+
+```sh
+#!/bin/zsh
+
+# Exercício: Calcular idade do usuário a partir
+# da data de nascimento e imprimir na tela.
+
+# Pedir as informações ao usuário
+# read -p 'Digite seu nome: ' NOME # comando no bash
+read NOME\?'Digite seu nome: '
+read NASCIMENTO\?'Digite sua data de nascimento (DD/MM/AAAA): '
+
+# Calcular idade
+ANO=$(echo $NASCIMENTO | cut -d"/" -f3)
+ANO_ATUAL=$(date +%Y)
+IDADE=$(echo "$ANO_ATUAL-$ANO" | bc -l)
+
+# Imprimir o resultado na tela
+echo "Olá $NOME"
+echo "Este ano você tem/terá $IDADE anos"
+```
+
+#### Expansão de variáveis
+**Manipulação de strings:**
+
+*Uso de variáveis:*
+```sh
+# Pode ser usado das duas formas
+$ echo $var
+$ echo ${var} # Desta forma podemos fazer a expansão de variáveis
+
+# Exenplo:
+$ var="Fabricio Leite"
+$ echo $var
+$ Fabricio Leite
+$ echo ${var}
+$ Fabricio Leite
+```
+
+*Acessar variáveis por delimitação de caracteres:*
+```sh
+$ echo ${var}
+$ Fabricio Leite
+
+$ echo ${var:9} # Acessa a string do nono caractere para frente
+$ Leite
+
+$ echo ${var:0:8} # Acessa a string do primeiro (0) caractere até o oitavo
+$ Fabricio
+
+# Salvar estes caracteres em uma variável
+$ var=${var:9}
+$ echo $var
+$ Leite
+```
+
+*Acessar números de caracteres com o #:*
+```sh
+$ echo ${#var}
+$ 14
+```
+
+*Substituição de caracteres e strings:*
+```sh
+# Substitui "Leite" por "Araujo"
+$ echo ${var/Leite/Araujo}
+$ Fabricio Araujo
+
+# Nova variável
+$ var2="Olá Fabricio Leite, seu nome é Leite?"
+
+# Substitui espaço vazio por nada (mesmo que deletar o espaço vazio)
+$ echo ${var2/ /} # deleta apenas o primeiro espaço vazio
+$ OláFabricio Leite, seu nome é Leite?
+
+$ echo ${var2// /} # deleta todos os espaços vazios
+$ OláFabricioLeite,seunomeéLeite?
+
+# Substitui todas as strings "Leite" por "Araujo"
+$ echo ${var2//Leite/Araujo}
+$ Olá Fabricio Araujo, seu nome é Araujo?
