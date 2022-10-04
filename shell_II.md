@@ -183,3 +183,50 @@ $ OláFabricioLeite,seunomeéLeite?
 # Substitui todas as strings "Leite" por "Araujo"
 $ echo ${var2//Leite/Araujo}
 $ Olá Fabricio Araujo, seu nome é Araujo?
+```
+
+*Estruturas condicionais:*
+
+```sh
+$ file="arquivo.txt" # Cria uma variável
+$ echo $file
+$ arquivo.txt
+```
+
+```sh
+$ echo ${file##*.} # Mostrar no shell a variável do ponto para frente
+$ txt
+
+$ echo ${file%%.*} # Mostrar no shell a variável do ponto para tráz
+$ arquivo
+```
+
+```sh
+# Upper e Lower Case
+$ echo ${file:u}
+$ ARQUIVO.TXT
+$ echo ${file:l}
+$ arquivo.txt
+```
+
+```sh
+$ echo ${vazia:-A variável está vazia} # Exibe mensagem caso a variável estaja vazia
+$ A variável está vazia
+$ echo ${file:-A variável está vazia} # Se não, exibe a variável
+$ arquivo.txt
+
+$ echo ${file:+Variável tem um valor} # Exibe mensagem se a variável tiver valor
+$ Variável tem um valor
+$ echo ${vazia:+Variável tem um valor} # Se não, exibe o vazio
+
+$ echo ${vazia:=valor padrão} # Adota valor padrão caso a mensagem esteja vazia
+$ valor padrão
+$ echo ${vazia}
+$ valor padrão
+$ echo ${file:=valor padrão} # Se não, exibe o valor da variável
+$ arquivo.txt
+$ echo ${vazia}
+$ valor padrão
+
+$ echo ${vazia2:?Mensagem de erro\!} # Gerar mensagem, caso a variável não exista
+$ zsh: vazia2: Mensagem de erro!
