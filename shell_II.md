@@ -247,7 +247,8 @@ $ zsh: vazia2: Mensagem de erro!
 # Pedir as informações ao usuário
 # read -p 'Digite seu nome: ' NOME # comando no bash
 read NOME\?'Digite seu nome: '
-# echo "Nome cadastrado: ${NOME:?Usuário não forneceu o nome\!}" \! (o \ transforma o ! em string)
+# echo "Nome cadastrado: ${NOME:?Usuário não forneceu o nome\!}"
+# \! (o \ frisa que o ! é uma string)
 echo "Nome cadastrado: ${NOME:?Usuário não forneceu o nome!}"
 read NASCIMENTO\?'Digite sua data de nascimento (DD/MM/AAAA): '
 echo "Data de Nasc.: ${NASCIMENTO:?Usuário não forneceu a data de nascimento!}"
@@ -261,4 +262,52 @@ IDADE=$(echo "$ANO_ATUAL-$ANO" | bc -l)
 # Imprimir o resultado na tela
 echo "Olá $NOME"
 echo "Este ano você tem/terá $IDADE anos"
+```
+
+#### Estruturas condicionais
+
+*Uso do **if** no shell:*
+
+```sh
+$ VAR="Fabricio" # Cria uma variável de nome VAR com parâmetro "Fabricio"
+$ echo $VAR # Mostrar variável no shell
+$ Fabricio # Resultado
+
+$ if [ "$VAR" = "Fabricio" ] # Se a variável for igual a "Fabricio"
+$ > then # Faça (Então)
+$ > echo "Olá usuário $VAR" # Mostre a mensagem
+$ > fi # Fecha o bloco if (if ao contario = fi)
+$ Olá usuário Fabricio # Resultado
+```
+
+*Uso do **if** no script, exemplo 1:*
+
+```sh
+#!/bin/zsh
+#
+# Exibe uma mensagem na tela se o usuário quiser.
+
+read RESPOSTA\?'Deseja exibir uma mensagem? (y/n)' # Criar um input na variável RESPOSTA
+
+MENSAGEM='Olá usuário, tudo bem?' # Cria variável
+
+if [ "$RESPOSTA" = "y" ] # Se a variável RESPOSTA for igual a y
+then # Faça (Então)
+    echo "$MENSAGEM" # Mostre a variável MENSAGEM
+fi # Fim do bloco if
+```
+
+*Uso do **if** no script, exemplo 2:*
+
+```sh
+#!/bin/zsh
+#
+# Listar diretório se o usuário quiser.
+
+read RESPOSTA\?'Deseja listar o diretório?(y/n) ' # input
+
+if [ "$RESPOSTA" = "y" ]
+then
+    ls # Comando ls para listar diretório
+fi
 ```
