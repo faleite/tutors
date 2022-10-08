@@ -41,7 +41,7 @@ Reabrir janela| **tmux attach -t 0** (número da janela)
 Função|Comando
 ------|------|
 Mudar de painel| **seta para a esquerda/direita**
-Alternar entre de paineis| **o**
+Alternar entre paineis| **o**
 Fechar painel| **exit**
 Redimencionar o tamanho dos paineis| **Manter prefixo e usar setas para dimencionar**
 
@@ -49,8 +49,8 @@ Redimencionar o tamanho dos paineis| **Manter prefixo e usar setas para dimencio
 
 Função|Comando
 ------|------|
-Salvar layout (plugin resurrect)| **s**
-Restaurar layout (plugin resurrect)| **r**
+Salvar layout (plugin resurrect)| **S**
+Restaurar layout (plugin resurrect)| **R**
 
 #### *Outros:*
 
