@@ -1,61 +1,59 @@
 # T M U X
 
 ## Guia prático para uso do tmux
+
+#### *Início:*
+
+Função|Comando
+------|------|
+Abir tmux| ``$ tmux``
+Prefixo: (Comando Base)| ``Control-b``
+Meu prefixo| ``Alt-b``
 ___
 
-Comando Base (Prefixo):
-``Control-b`` (meu prefixo = <option> + <->)
+#### **ATENÇÃO:** ***Use o prefixo + comando para acessar as funções***
 ___
-Abrir o tmux: **tmux**
 
-Criar uma nova janela: **c-b c**
+#### *Navegar pelas janelas:*
 
-Ir para a janela anterior:
-**c-b p**
+Função|Comando
+------|------|
+Criar uma nova janela| **c**
+Ir para a janela anterior| **p**
+Ir para a proxima janela| **n**
+Ir para a janela pelo seu numero|**0** (número da janela)
+Ir para ultima janela acessada| **l**
 
-Ir para a proxima janela:
-**c-b n**
+#### *Manipular janelas:*
 
-Ir para a janela pelo seu numero:
-**c-b 0** (numero da janela)
+Função|Comando
+------|------|
+Dividir janela verticalmente| **%**
+Dividir janela horizontalemnte| **"**
+Nomear janela| **, <nome da janela\>**
+Listar/Mostrar janelas| **w**
+Deletar janela| *Listar janelas* + **x**
+Sair/Fechar Janela| **d**
+Reabrir janela| **tmux attach -t 0** (número da janela)
 
-Ir para ultima janela acessada:
-**c-b l**
+#### *Manipular paineis:*
 
-Nomear janela:
-**c-b , nome da janela**
+Função|Comando
+------|------|
+Mudar de painel| **seta para a esquerda/direita**
+Alternar entre de paineis| **o**
+Fechar painel| **exit**
+Redimencionar o tamanho dos paineis| **Manter prefixo e usar setas para dimencionar**
 
-Listar/Mostrar janelas: **c-b w**
+#### *Manipular layout:*
 
-Sair/Fechar Janela: **c-b d**
+Função|Comando
+------|------|
+Salvar layout (plugin resurrect)| **s**
+Restaurar layout (plugin resurrect)| **r**
 
-Reabrir janela:
-**tmux attach -t 0**
-(numero da janela)
+#### *Outros:*
 
-Dividir janela verticalmente:
-**c-b %**
-
-Mudar de painel:
-**c-b-(seta esquerda/direita)**
-
-Alternar entre de paineis:
-**c-b o**
-
-Fechar painel: **exit**
-
-Dividir janela horizontalemnte:
-**c-b "**
-
-Redimencionar o tamanho dos
-paineis: **Manter precionado c-b
-e usar setas para dimencionar**
-
-Salvar layout (plugin resurrect)
-**c-b-s**
-
-Restaurar layout (plugin resurrect)
-**c-b-r**
-
-Atualizar alterações do .tmux.conf:
-**Prefix-I**
+Função|Comando
+------|------|
+Atualizar alterações do .tmux.conf| **I**
