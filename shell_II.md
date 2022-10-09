@@ -99,6 +99,8 @@ VAR="${NOME}sou uma variável!"
 VAR="$NOMEsou uma variável!"
 ```
 
+---
+
 #### Script para calcular idade de usuário
 
 *Exemplo script.sh:*
@@ -123,6 +125,7 @@ IDADE=$(echo "$ANO_ATUAL-$ANO" | bc -l)
 echo "Olá $NOME"
 echo "Este ano você tem/terá $IDADE anos"
 ```
+---
 
 #### Expansão de variáveis
 **Manipulação de strings:**
@@ -231,6 +234,7 @@ $ valor padrão
 $ echo ${vazia2:?Mensagem de erro\!} # Gerar mensagem, caso a variável não exista
 $ zsh: vazia2: Mensagem de erro!
 ```
+---
 
 #### Script para calcular idade de usuário, utilizando a expansão de variáveis
 
@@ -263,8 +267,11 @@ IDADE=$(echo "$ANO_ATUAL-$ANO" | bc -l)
 echo "Olá $NOME"
 echo "Este ano você tem/terá $IDADE anos"
 ```
+---
 
 #### Estruturas condicionais
+
+**Comparação de strings**
 
 *Uso do **if** no shell:*
 
@@ -272,12 +279,41 @@ echo "Este ano você tem/terá $IDADE anos"
 $ VAR="Fabricio" # Cria uma variável de nome VAR com parâmetro "Fabricio"
 $ echo $VAR # Mostrar variável no shell
 $ Fabricio # Resultado
+```
 
+> = (Verificar igualdade)
+```sh
 $ if [ "$VAR" = "Fabricio" ] # Se a variável for igual a "Fabricio"
-$ > then # Faça (Então)
-$ > echo "Olá usuário $VAR" # Mostre a mensagem
-$ > fi # Fecha o bloco if (if ao contario = fi)
+$ then # Faça (Então)
+$ echo "Olá usuário $VAR" # Mostre a mensagem
+$ fi # Fecha o bloco if (if ao contario = fi)
 $ Olá usuário Fabricio # Resultado
+```
+
+> != (Verificar se é diferente)
+```sh
+$ if [ "$VAR" != "Leite" ]
+$ then
+$ echo "$VAR é diferente de Leite"
+$ fi
+$ Fabricio é diferente de Leite
+```
+> -n (Verifificar se é não nula)
+```sh
+$ if [ -n "$VAR" ]
+$ then
+$ echo "Variável tem um valor: $VAR"
+$ fi
+$ Variável tem um valor: Fabricio
+```
+
+> -z (Verificar se é nula)
+```sh
+$ if [ -z "$NOME_USUARIO" ]
+$ then
+$ echo "Usuário precisa passar o nome"
+$ fi
+$ Usuário precisa passar o nome
 ```
 
 *Uso do **if** no script, exemplo 1:*
@@ -309,5 +345,54 @@ read RESPOSTA\?'Deseja listar o diretório?(y/n) ' # input
 if [ "$RESPOSTA" = "y" ]
 then
     ls # Comando ls para listar diretório
+fi
+```
+---
+
+#### Comparação númerica com o bloco if
+
+*Exemplos com script:*
+
+```sh
+#!/bin/zsh
+#
+# Exemplifica as comparações númericas com blocos if:
+
+NUM="10"
+
+# Verificar se NUM é < 11 (menor)
+if [ "$NUM" -lt "11" ]
+then
+    echo "$NUM < 11"
+fi
+
+# Verificar se NUM é > 9 (maior)
+if [ "$NUM" -gt  "9" ]
+then
+    echo "$NUM > 9"
+fi
+
+# Verificar se NUM é <= 10 (menor ou igual)
+if [ "$NUM" -le "10" ]
+then
+    echo "$NUM <= 10"
+fi
+
+# Verificar se NUM é >= 10 (maior ou igual)
+if [ "$NUM" -ge "10" ]
+then
+    echo "$NUM >= 10"
+fi
+
+# Verificar se NUM é = 10 (igual)
+if [ "$NUM" -eq "10" ]
+then
+    echo "$NUM = 10"
+fi
+
+# Verificar se NUM é != 9 (diferente)
+if [ "$NUM" -ne "9" ]
+then
+    echo "$NUM != 9"
 fi
 ```
