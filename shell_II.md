@@ -526,3 +526,73 @@ else
 	exit 1  # exit 1 -> representa a saida ivalida 1 no `~> echo $?`
 fi
 ```
+
+#### Informar conceito a partir da nota do usuário
+
+*Exemplo conceito_if.sh:*
+```sh
+#! /bin/bash
+#
+#Exercício
+#Escreva um programa em shell script que pede e recebe a nota do usuário
+#a partir da linha de comandos, e calcula o conceito. Utilize blocos IF,
+#porém construa a lógica dos testes de modo a fazer o mínimo de testes possível.
+#
+#Os conceitos são:
+#De 0 a 5 potos - Insuficiente
+#De 5 a 7 pontos - Regular
+#De 7 a 9 pontos - Bom
+#Acima de 9 pontos - Excelente
+
+read -p "Qual é a sua nota? " NOTA
+
+if [ "$NOTA" -gt "9" ]
+then
+    echo "Excelente"
+
+elif [ "$NOTA" -gt "7" ]
+then
+    echo "Bom"
+
+elif [ "$NOTA" -gt "5" ]
+then
+    echo "Regular"
+
+elif [ "$NOTA" -gt "0" ]
+then
+    echo "Insuficiente"
+
+else
+    echo "Nota inválida"
+    exit 1
+fi
+
+# ---X--- #
+
+### Modificação:
+# Adaptado para aritmética de ponto flutuante (precisão de uma casa decimal).
+
+# Multiplica a nota por 10 e pega o valor da casa decimal (7.7*10=77.0 -> 77)
+NOTA=$(echo "$NOTA*10" | bc -l | cut -d"." -f1)
+
+if [ "$NOTA" -gt "90" ]
+then
+	echo "Conceito Excelente"
+
+elif [ "$NOTA" -gt "70" ]
+then
+	echo "Conceito Bom"
+
+elif [ "$NOTA" -gt "50" ]
+then
+	echo "Conceito Regular"
+
+elif [ "$NOTA" -gt "0" ]
+then
+	echo "Conceito Insuficiente"
+
+else
+	echo "Usuário não forneceu uma nota válida!"
+	exit 1
+fi
+```
