@@ -1,7 +1,7 @@
 # Shell - Módulo II
 ## *Crição de scripts e Estruturas lógicas*
 
-#### Exibir mensagem no Shell
+### 1. Exibir mensagem no Shell
 
 Função|Comando|
 ------|-------|
@@ -31,7 +31,8 @@ pwd # exibir caminho do arquivo
 
 ---
 
-#### "input" no shell com o "read" (Requisita informação do usuário pela linha de comando)
+### 2. "input" no shell com o "read"
+#### *Requisita informação do usuário pela linha de comando*
 
 *Uso do **read** sem input:*
 ```sh
@@ -73,7 +74,7 @@ echo "$NOME, Bem vindo ao canal Geofisicando!" # Exibe mensagem e a variável $N
 
 ---
 
-#### Variávies no shell
+### 3. Variávies no shell
 
 ```sh
 # Dentro dos scripts do shell tudo é interpretado como string
@@ -98,8 +99,6 @@ ${NOME} # Proteção de variável
 VAR="${NOME}sou uma variável!"
 VAR="$NOMEsou uma variável!"
 ```
-
----
 
 #### Script para calcular idade de usuário
 
@@ -127,10 +126,10 @@ echo "Este ano você tem/terá $IDADE anos"
 ```
 ---
 
-#### Expansão de variáveis
-**Manipulação de strings:**
+### 4. Expansão de variáveis
+#### *Manipulação de strings:*
 
-*Uso de variáveis:*
+* *Uso de variáveis:*
 ```sh
 # Pode ser usado das duas formas
 $ echo $var
@@ -144,7 +143,7 @@ $ echo ${var}
 $ Fabricio Leite
 ```
 
-*Acessar variáveis por delimitação de caracteres:*
+* *Acessar variáveis por delimitação de caracteres:*
 ```sh
 $ echo ${var}
 $ Fabricio Leite
@@ -161,13 +160,13 @@ $ echo $var
 $ Leite
 ```
 
-*Acessar números de caracteres com o #:*
+* *Acessar números de caracteres com o #:*
 ```sh
 $ echo ${#var}
 $ 14
 ```
 
-*Substituição de caracteres e strings:*
+* *Substituição de caracteres e strings:*
 ```sh
 # Substitui "Leite" por "Araujo"
 $ echo ${var/Leite/Araujo}
@@ -188,7 +187,7 @@ $ echo ${var2//Leite/Araujo}
 $ Olá Fabricio Araujo, seu nome é Araujo?
 ```
 
-*Estruturas condicionais:*
+* *Estruturas condicionais:*
 
 ```sh
 $ file="arquivo.txt" # Cria uma variável
@@ -236,9 +235,7 @@ $ zsh: vazia2: Mensagem de erro!
 ```
 ---
 
-#### Script para calcular idade de usuário, utilizando a expansão de variáveis
-
-*Exemplo script.sh:*
+#### *Script para calcular idade de usuário, utilizando a expansão de variáveis:*
 
 ```sh
 #!/bin/zsh
@@ -269,11 +266,11 @@ echo "Este ano você tem/terá $IDADE anos"
 ```
 ---
 
-#### Estruturas condicionais
+### 5. Estruturas condicionais
 
-**Comparação de strings**
+#### *Comparação de strings*
 
-*Uso do **if** no shell:*
+* *Uso do **if** no shell:*
 
 ```sh
 $ VAR="Fabricio" # Cria uma variável de nome VAR com parâmetro "Fabricio"
@@ -316,7 +313,7 @@ $ fi
 $ Usuário precisa passar o nome
 ```
 
-*Uso do **if** no script, exemplo 1:*
+* *Uso do **if** no script, exemplo 1:*
 
 ```sh
 #!/bin/zsh
@@ -333,7 +330,7 @@ then # Faça (Então)
 fi # Fim do bloco if
 ```
 
-*Uso do **if** no script, exemplo 2:*
+* *Uso do **if** no script, exemplo 2:*
 
 ```sh
 #!/bin/zsh
@@ -349,9 +346,9 @@ fi
 ```
 ---
 
-#### Comparação númerica com o bloco if
+### Comparação númerica com o bloco if
 
-*Exemplos com script:*
+* *Exemplos com script:*
 
 ```sh
 #!/bin/zsh
@@ -398,9 +395,9 @@ fi
 ```
 ---
 
-#### Bloco if com múltiplas condicionais: if, elif, else
+### Bloco if com múltiplas condicionais: if, elif, else
 
-*Exemplo script.sh:*
+* *Exemplo script.sh:*
 ```sh
 #!/bin/bash
 #
@@ -426,10 +423,10 @@ fi
 
 #### Mini sitesma de cadastro:
 
-*Exemplo cadastro_if.sh:*
 ```sh
 #! /bin/bash
 #
+# File: cadastro_if.sh
 # Exemplo de sistema de cadatro com o bloco if, elif, else.
 
 MENU="
@@ -481,10 +478,10 @@ fi
 
 #### Verifica faixa etária do Usuário
 
-*Exemplo faixa_etaria_if.sh:*
-
 ```sh
 #! /bin/bash
+#
+# file: faixa_etaria_if.sh:*
 #
 #Escreva um programa em shell script que pede e recebe a idade do usuário a
 #partir da linha de comandos, e calcula a faixa etária do usuário.
@@ -523,15 +520,16 @@ then
 
 else
 	echo "O usuário forneceu uma idade inválida!"
-	exit 1  # exit 1 -> representa a saida ivalida 1 no `~> echo $?`
+	exit 1  # Saída invalida -> [ ~> echo $? ]
 fi
 ```
 
 #### Informar conceito a partir da nota do usuário
 
-*Exemplo conceito_if.sh:*
 ```sh
 #! /bin/bash
+#
+# file: conceito_if.sh:*
 #
 #Exercício
 #Escreva um programa em shell script que pede e recebe a nota do usuário
@@ -595,4 +593,70 @@ else
 	echo "Usuário não forneceu uma nota válida!"
 	exit 1
 fi
+```
+---
+
+### Verificação de existência de arquivos e diretórios
+
+```sh
+#! /bin/bash
+#
+# file: verifica_arq_dir.sh
+#
+# Exemplo de verificação de arquivo e diretório com o bloco if
+
+# Verificar se arquivo existe
+if [ -f file.txt ]  # -f  --> flag para verificar existência de arquivos
+then
+    echo "Arquivo file.txt existente foi removido"
+    rm "file.txt"  # remover arquivo
+else
+    echo "Arquivo file.txt NÃO existe!"
+fi
+
+# Verificar se diretório existe
+if [ -d diretorio ]  # -d  --> flag para verificar existência de diretórios
+then
+    echo "Removendo Diretório"
+    rm -r diretorio # remover diretório
+else
+    echo "Diretório não encontrado!"
+    exit 1
+fi
+```
+*Comandos usados:*
+
+Comando|Função
+-------|------
+**chmod 777 verifica_arq_dir.sh**| *Dar permição para execução de script*
+**touch file.txt**| *Criar arquivo vazio*
+**mkdir diretorio**| *Criar diretorio*
+
+---
+### Flags do bloco if
+
+#### *Condicionais com o "e" lógico. ---> "-a":*
+```sh
+#! /bin/bash
+#
+# file: e_logico.sh
+#
+# Exemplo de condicionais com "e" lógico.
+#
+# O usuário informa a idade e quanto de dinheiro possui. O programa
+# verifica se ele poderá ir ao cinema para assistir um filme cujo ingresso
+# custa 50R$ e com censura para maiores de 18 anos
+
+read -p "Quantos anos você tem? " IDADE
+read -p "Quanto de grana possui? " GRANA
+
+# flags: -ge (maior ou igual que), -a (and (e) booleano (lógico))
+if [ "$IDADE" -ge "18" -a "$GRANA" -ge "50" ]
+then
+    echo "Poderá ir ao cinema!"
+    exit 0  # Saída valida -> [ ~> echo $? ]
+fi
+
+echo "Não poderá ir ao cinema!"
+exit 1  # Saída invalida -> [ ~> echo $? ]
 ```
