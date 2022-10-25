@@ -688,3 +688,44 @@ echo "Usuário: $USER"
 echo "Grupo: $GROUP"
 exit 1  # Saída invalida -> [ ~> echo $? ]
 ```
+
+### Condicionais de comando: Simbolos especiais no Shell
+
+#### Separador de comandos com o " ; "
+```sh
+# O separador permite incluir em uma linha de execução mais de um bloco de comando
+echo "primeiro_comando"; echo "segundo_comando"
+primeiro comando
+segundo comando
+
+# O " ; " separa cada bloco de comando, fazendo executar um a um
+cat "primeiro_comando"; echo "segundo_comando"
+cat: primeiro_comando: No such file or directory
+segundo_comando
+```
+
+#### E lógico (and boleano), com o " && "
+```sh
+# O " && " separa mais de um bloco de comando na linha de execução
+# " && " executa o primeiro e o segundo comando
+echo "primeiro_comando" && echo "segundo_comando"
+primeiro_comando
+segundo_comando
+
+# Se o primeiro bloco não tiver sucesso, ele não execulta o proximo
+cat "primeiro_comando" && echo "segundo_comando"  # && -> 'e' lógico
+cat: primeiro_comando: No such file or directory
+```
+
+#### Ou lógico (or boleano), com o " || "
+```sh
+# O " || " separa mais de um bloco de comando na linha de execução
+# Com o " || " executa o primeiro bloco ou o segundo
+echo "primeiro_comando" || echo "segundo_comando"
+primeiro_comando
+
+# Caso o primeiro bloco não tenha sucesso, ele executa o segundo
+cat "primeiro_comando" || echo "segundo_comando"
+cat: primeiro_comando: No such file or directory
+segundo_comando
+```
