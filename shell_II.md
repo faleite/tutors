@@ -712,12 +712,13 @@ echo "primeiro_comando" && echo "segundo_comando"
 primeiro_comando
 segundo_comando
 
+# O segundo bloco de comando fica condicionado ao sucesso do primeiro bloco
 # Se o primeiro bloco não tiver sucesso, ele não execulta o proximo
 cat "primeiro_comando" && echo "segundo_comando"  # && -> 'e' lógico
 cat: primeiro_comando: No such file or directory
 ```
 
-#### Ou lógico (or boleano), com o " || "
+#### Ou lógico (or boleano), com o " | | "
 ```sh
 # O " || " separa mais de um bloco de comando na linha de execução
 # Com o " || " executa o primeiro bloco ou o segundo
@@ -728,4 +729,48 @@ primeiro_comando
 cat "primeiro_comando" || echo "segundo_comando"
 cat: primeiro_comando: No such file or directory
 segundo_comando
+```
+
+#### Uso do " && " ---> Executar se bem sucedido
+```sh
+# Verifica se há o arquivo no diretório. Se há, exibe mensagem
+# -f (verifica arquivo)
+[ -f arquivo.md ] && echo 'Arquivo encontrado!'  # && (and bool)
+Arquivo encontrado!
+
+# Identação de código com o "{}". Para mais linhas no bloco de código
+[ -f arquivo.md ] && {  # Abre bloco
+echo 'arquivo encontrado!'
+echo 'outra linha de codigo'
+}  # Fecha bloco
+arquivo encontrado!
+outra linha de codigo
+```
+
+*Exemplo com uso de script.sh:*
+```sh
+#! /bin/bash
+#
+# file: uso_e_logico.sh
+#
+# Exemplo de utilização do && como condicional
+# de comandos do Shell
+
+ARQUIVO="arquivo.md"
+
+[ -f 'arquivo.md' ] && {  # -f (verifica existência de arquivo)
+    echo "Arquivo $ARQUIVO encontrado!"
+    echo "remover..."
+    rm -i "$ARQUIVO"  # -i (pergunta se deve executar o comando)
+
+    [ ! -f "$ARQUIVO" ] && {  # ! (negação) ! -f (verifica inexistência de arquivo)
+
+        echo "O arquivo $ARQUIVO foi removido com sucesso!"
+    }
+
+    exit 0
+}
+
+echo "Arquivo $ARQUIVO NÂO encontrado!"
+exit 1
 ```
