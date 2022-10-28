@@ -737,7 +737,8 @@ segundo_comando
 # -f (verifica arquivo)
 [ -f arquivo.md ] && echo 'Arquivo encontrado!'  # && (and bool)
 Arquivo encontrado!
-
+```
+```sh
 # Identação de código com o "{}". Para mais linhas no bloco de código
 [ -f arquivo.md ] && {  # Abre bloco
 echo 'arquivo encontrado!'
@@ -772,5 +773,45 @@ ARQUIVO="arquivo.md"
 }
 
 echo "Arquivo $ARQUIVO NÂO encontrado!"
+exit 1
+```
+
+#### Uso do " | | " ---> Executar se mal sucedido
+```sh
+# Verifica se há o arquivo no diretório. Se não houver, exibe mensagem
+# -f (verifica arquivo)
+[ -f ArqNaoExiste.md ] || echo 'Arquivo não encontrado!'  # || (or bool)
+Arquivo não encontrado!
+```
+```sh
+# Identação de código com o "{}". Para mais linhas no bloco de código
+[ -f arqNAOex.txt ] || {  # Abre bloco
+echo "Arquivo não encontrado\!"
+echo "Outra mensagem"
+}  # Fecha bloco
+Arquivo não encontrado!
+Outra mensagem
+```
+
+*Exemplo com uso de script:*
+```sh
+#! /bin/bash
+#
+# file: uso_ou_logico.sh
+#
+# Exemplo de utilização do || como condicional
+# de comandos do Shell (ou boleano)
+
+DIRETORIO="Geofisicando"
+
+[ -d 'Geofisicando' ] || {  # -d (verifica existencia de diretório)
+    echo "Diretório $DIRETORIO não encontrado!"
+    echo "Será Criado novo diretório..."
+    mkdir "$DIRETORIO"
+
+    exit 0
+}
+
+echo "O diretório $DIRETORIO já existe na pasta atual!"
 exit 1
 ```
