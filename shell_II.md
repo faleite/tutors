@@ -830,7 +830,25 @@ MENU="
 1 - Ajuda
 2 - Versão
 3 - Exibir mensagem
-4 - Criar Arquivo
+4 - #!/bin/bash
+#
+# Exemplo de como passar parâmetros ao programa pela
+# linha de comandos (Parâmetros posicionais)
+#
+# ./programa.sh p1 p2 p3 p4
+#        ^      ^  ^  ^  ^
+#        $0     $1 $2 $3 $4
+
+echo "O nome do progrma no terminal é: $0"
+echo "O nome do progrma é: $( basename $0)"
+
+echo "O primeiro parâmetro passado foi: $1"
+echo "O segundo parâmetro passado foi: $2"
+echo "O terceiro parâmetro passado foi: $3"
+echo "O quarto parâmetro passado foi: $4"
+
+exit 0
+Criar Arquivo
 "
 
 echo "$MENU"  # Mostra a variável menu no shell
@@ -859,4 +877,66 @@ case "$OPCAO" in
         exit 1  # exemplifica que houve um erro de execução
     ;;
 esac  # fecha o bloco case (é o case invertido)
+```
+
+### Parâmetros e flags:
+Comandos|Flags|Função
+--------|------|-----
+**ls -l**| **-l**| *ativa o formato de listagem longa*
+**ls -a**| **-a**| *lista todos os arquivos, inclusive ocultos*
+**ls -1**| **-1**| *Lista arquivos em uma coluna*
+
+*Exemplos:*
+
+```sh
+# cp --> cria copia de arquivo
+$ cp algo.md copia.md
+
+# rm --> deletar arquivo
+$ rm copia.md
+
+# basename --> pega o nome do arquivo
+$ echo "$(basename home/lab/algo.md)"
+algo.md  # nome do arquivo
+
+# dirname --> pega o caminho do arquivo
+$ echo "$(dirname home/lab/algo.md)"
+home/lab  # caminho do arquivo
+```
+
+*Exemplo com script:*
+
+```sh
+#!/bin/bash
+#
+# file: basename.sh
+#
+# Exemplo de como passar parâmetros ao programa pela
+# linha de comandos (Parâmetros posicionais)
+#
+# ./programa.sh p1 p2 p3 p4
+#        ^      ^  ^  ^  ^
+#        $0     $1 $2 $3 $4
+
+echo "O nome do progrma no terminal é: $0"
+echo "O nome do progrma é: $( basename $0)"
+
+echo "O primeiro parâmetro passado foi: $1"
+echo "O segundo parâmetro passado foi: $2"
+echo "O terceiro parâmetro passado foi: $3"
+echo "O quarto parâmetro passado foi: $4"
+
+exit 0
+```
+
+*Saída do script:*
+
+```sh
+$ ./basename.sh a b c d
+O nome do progrma no terminal é: ./basename.sh
+O nome do progrma é: basename.sh
+O primeiro parâmetro passado foi: a
+O segundo parâmetro passado foi: b
+O terceiro parâmetro passado foi: c
+O quarto parâmetro passado foi: d
 ```
