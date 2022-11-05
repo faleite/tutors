@@ -823,6 +823,8 @@ exit 1
 ```sh
 #! /bin/bash
 #
+# file: case.sh
+#
 # Exemplo de uso da estrutura condicional "case"
 # para gerar um menu de opções em Shell Script
 
@@ -831,24 +833,6 @@ MENU="
 2 - Versão
 3 - Exibir mensagem
 4 - #!/bin/bash
-#
-# Exemplo de como passar parâmetros ao programa pela
-# linha de comandos (Parâmetros posicionais)
-#
-# ./programa.sh p1 p2 p3 p4
-#        ^      ^  ^  ^  ^
-#        $0     $1 $2 $3 $4
-
-echo "O nome do progrma no terminal é: $0"
-echo "O nome do progrma é: $( basename $0)"
-
-echo "O primeiro parâmetro passado foi: $1"
-echo "O segundo parâmetro passado foi: $2"
-echo "O terceiro parâmetro passado foi: $3"
-echo "O quarto parâmetro passado foi: $4"
-
-exit 0
-Criar Arquivo
 "
 
 echo "$MENU"  # Mostra a variável menu no shell
@@ -872,7 +856,7 @@ case "$OPCAO" in
         echo "Criando arquivo..."  # exibe o texto
         touch arquivo.txt  # cria o arquivo.txt
     ;;
-    *)  # Representa qualquer opção que não seja 1, 2, 3, ou 4 (Default)
+    *)  # Representa qualquer opção que não seja as anteriores (Default)
         echo "Opção $OPCAO desconhecida!"
         exit 1  # exemplifica que houve um erro de execução
     ;;
@@ -939,4 +923,53 @@ O primeiro parâmetro passado foi: a
 O segundo parâmetro passado foi: b
 O terceiro parâmetro passado foi: c
 O quarto parâmetro passado foi: d
+```
+
+### Menu de parâmetros com "flags"
+*Exemplo com script:*
+
+```sh
+#! /bin/bash#
+#
+# file: case_flags.sh
+#
+# Exemplo de uso da estrutura condicional "case"
+# para gerar um menu de opções em Shell Script
+# "Com o uso de flags"
+
+AJUDA="
+-h --help    Exibe ajuda e sai
+-v --version Exibe versão e sai
+-m           Exibe mensagem na tela
+-c           Cria arquivo.txt
+"
+
+VERSAO="Versão 1.0"
+
+case "$1" in
+    # | --> pode dar duas opções separado pela "|"
+    # podendo ser usada uma ou outra
+    -h | --help)  # se o parâmetro $1 for igual a -h ou --version
+        echo "$AJUDA"  # Exibe a variável AJUDA
+    ;;  # fecha o bloco de opção
+
+    -v | --version)
+        echo "$VERSAO"
+    ;;
+
+    -m)
+        echo "Olá galera do canal Geofisicando!"
+    ;;
+
+    -c)
+        echo "Criando arquivo..."  # exibe o texto
+        touch arquivo.txt  # cria o arquivo.txt
+    ;;
+
+    *)  # Representa qualquer opção que não seja uma das anteriores (Default)
+        echo "Opção $1 desconhecida!"
+        echo "Digite $(basename $0) -h para obter ajuda!"
+        exit 1  # exemplifica que houve um erro de execução
+    ;;
+esac  # fecha o bloco case (é o case invertido)
 ```
