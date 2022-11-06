@@ -1,1 +1,6 @@
-Fabricio:95118601:devfaleite@gmail.com
+Usuário: Fabricio
+Email: fabricio@gmail.com
+Usuário: Araujo
+Email: araujo@gmail.com
+Usuário: Leite
+Email: leite@gmail.com
