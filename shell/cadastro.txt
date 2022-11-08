@@ -1,4 +1,3 @@
-Usuário: Fabricio
-Email: fabricio@gmail.com
-Usuário: Leite
-Email: leite@gmail.com
+Fabricio:fabricio@gmail.com
+Leite:leite@gmail.com
+Araujo:araujo@gmail.com
