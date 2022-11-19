@@ -44,9 +44,10 @@ Obter nome do arquivo sem mostrar sua extenção| **basename $NOME_ARQUIVO.txt**
 Função|Comando|
 ------|-------|
 Remover diretorio| **rm -rf 'nome-diretorio'**
-Remover diretorio| **rmdir -r 'nome-diretorio'**
-Remover diretorio vazio| **rmdir 'nome-diretorio'**
+Remover diretorio forçadamente| **rm -rf 'nome-diretorio'**
+Remover diretorio| **rm -r 'nome-diretorio'**
 Remover arquivo| **rm 'nome-arquivo'**
+Remover arquivo forçadamente| **rm -f 'nome-arquivo'**
 Remover arquivo com pedido de confirmação| **rm -i 'nome-arquivo'**
 Mover arquivo/diretório| **mv 'nome-arquivo' ~/endereço/onde/vai-mover**
 Mover todos os arquivos com a mesma extensão| **mv *.md ~/endereço/para-onde/vai-mover**
@@ -60,6 +61,8 @@ Gerar arquivo temporário| **mktemp ./tmp.XXXX**
 ./ | diretório atual
 tmp.XXXX| nome do arquivo
 XXXX| gera uma extensão aleatória
+**-r**| *Recursiva*
+**-f**| *Forçado*
 
 #### Hitórico de comandos
 
