@@ -101,10 +101,12 @@ Exibir conteúdo de mais de um arquivo no shell| **cat arq2.txt arq1.txt**
 Concatenar texto de mais de um arquivo| **cat arq2.txt arq1.txt >> arqConcatenado.txt**
 Exibir conteúdo do arquivo com linhas numeradas no shell| **cat -n arqConcatenado.txt**
 
-#### Pipe
+#### Pipe e bc
 
 Função|Comando|
 ------|-------|
+Acessar calculadora do Shell| **bc**
+Sair da calculadora do Shell| **quit**
 Escrever codigo em mais de uma linmha no shell| **\** -> Para continuar na proxima linha
 Calculadora do shell com float| **bc -l**
 Executar mais de um comando no shell| **I** (Barra Lateral) ex:
@@ -113,7 +115,7 @@ echo "2+1" | bc -l
 3
 ```
 ``````
->>> ec>ho "2+3" | bc -l >> arq.txt
+>>> echo "2+3" | bc -l >> arq.txt
 >>> cat arq.txt
 >>> 5
 ``````
@@ -169,6 +171,7 @@ Função|Comando|
 Exibir as dez primeiras linhas| **head [nome-arquivo]**
 Exibir numeros de linhas desejado| **head -n 3 [nome-arquivo]** # 3 (numero de linhas)
 Exibir numeros de linhas desejado de varios arquivos| **head -n 3 [nome-arq-1] [nome-arq-2]**
+Exibir numeros de caracteres desejado| **head -c 7 [nome-arquivo]** # 7 (numero de caracteres)
 
 Exemplo de combinção de código com **pipe** e **head**:
 ``````sh
@@ -180,7 +183,8 @@ Exemplo de combinção de código com **pipe** e **head**:
 Função|Comando|
 ------|-------|
 Exibir as dez últimas linhas| **tail [nome-arquivo]**
-Exibir últimos numeros de linhas desejado| **tail -n 3 [nome-arquivo]** # 3 (numero de linhas)
+Exibir últimos numeros de linhas desejado| **tail -n 3 [nome-arquivo]** # 3 (número de linhas)
+Exibir últimos caracteres desejado| **tail -c 7 [nome-arquivo]** # 7 (número de caracteres)
 
 Exemplo de combinção de código com **pipe** e **tail**:
 ``````sh
@@ -234,6 +238,7 @@ Exibir conteúdo com espaço vazio como separador| **wc -m texto.txt &#124; cut 
 
 Função|Comando|
 ------|-------|
+Salvar mensagem de erro em um arquivo| ** ls [Arq não existente] 2> error.log**
 Gerar arquivo de log| **echo "1,2,3" &#124; tee log.txt &#124; wc**
 Adicionar texto ao arquivo de log| **echo "1,2,3" &#124; tee -a log.txt &#124; wc**
 Observação:| Por padrão o comando sem o "-a" rescreve arquivo original
@@ -541,10 +546,12 @@ sed -ie '/\.$/d' texto.txt| *Deletar . ao final da linha*
 Comando|Função|
 ------|-------|
 cat -n texto.txt| *Printar arquivo no shell com linhas enumeradas*
+grep BUG texto.txt| *Printar linha onde contém a palavra BUG*
 grep -n BUG texto.txt| *Printar número e linha onde contém a palavra BUG*
 grep -v BUG texto.txt| *Printar arquivo no shell, eliminando a linha que contém a palavra BUG*
 grep -c BUG texto.txt| *Printar números de linhas que contém a palavra BUG*
 grep -o BUG texto.txt| *Printar todas as palavras BUG do arquivo*
+grep -i bUg texto.txt| *Printar linha onde contém a palavra bug ignorando maiúsculas de minúsculas*
 grep -B 2 galera texto.txt|*Printar linha que contém a palavra galera mais as duas linhas anterior*
 grep -A 2 galera texto.txt|*Printar linha que contém a palavra galera mais as duas linhas posterior*
 grep -C 2 galera texto.txt|*Printar linha com a palavra galera com duas linhas anterior e posterior*
@@ -606,6 +613,19 @@ ln -s -f lib/lib2.0.sh link_lib # Força mudança da path do link
 Versão 2.0
 ```
 
+#### env, expert e more
+Comando|Função|
+------|-------|
+env| *Mostra o ambiente de desenvolvimento do Shell. Mostra os parâmetros de configuração.*
+export [\$sua_variavel]| *Exporta para os parâmetros de configuração do Shell a criação da sua variável com chave e valor.*
+more [file.txt]| *Alternativa ao "cat", com o more você consegue navegar pela pagina e pesquisar no arquivo.*
+
+#### find
+Comando|Função|
+------|-------|
+find .|*Encontra todos os arquivos em arvores na pasta atual.*
+find . -name [file.txt]| *Busca pelo respectivo  arquivo na pasta atual.*
+find . -maxdepth [n]| *Mostra todos os arquivos em grau de diretório passados no parâmetro [n], onde representa 0 como primeiro diretório, 1 segundo dir. e assim por diante.*
 
 #### Acessar documentação do shell
 
