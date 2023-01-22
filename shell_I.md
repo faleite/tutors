@@ -53,6 +53,7 @@ Mover arquivo/diretório| **mv 'nome-arquivo' ~/endereço/onde/vai-mover**
 Mover todos os arquivos com a mesma extensão| **mv *.md ~/endereço/para-onde/vai-mover**
 Renomear arquivo/diretório| **mv nome-arquivo.py novo-nome.py**
 Criar arquivo| **touch nomearquivo.txt**
+Criar vários arquivos| **touch [file{0..10}.txt]**
 Mostrar na tela o conteúdo do arquivo| **cat [nome-do-arquivo]**
 Gerar diretório| **mkdir [nome-do-diretorio]**
 Gerar diretório dentro de diretório| **mkdir -p [teste/teste1/teste3]**
