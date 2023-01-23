@@ -26,9 +26,13 @@ Listar arquivos e suas permissões| **ls -l**
 
 Função|Comando|
 ------|-------|
-Tipos de permissões| r (ler), w (escrever), x (executar)
-Grupo de permissões| g (geral), u (usuários), o (outros)
-Alterar permissões| **chmod** (ex. chmod o=r tarefas.md)
+Ex:.1 | drwxr--r--  1 fabricio  staff  0 23 Jan 21:56 Home
+Ex:.2 | -rwxr--r--  1 fabricio  staff  0 23 Jan 21:56 file.md
+Ex:.3 | lrwxr--r--  1 fabricio  staff  0 23 Jan 21:56 link.md
+Tipos de permissões| r (read), w (write), x (execute)
+Outra descriminação| d (diretório), - (arquivo comum), l (link)
+Grupo de permissões| u (usuários), g (grupo), o (outros)
+Alterar permissões| **chmod** (ex. chmod o=r file.md)
 
 #### Criar variavel
 
