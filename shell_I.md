@@ -12,6 +12,9 @@ Ir para diretório a cima| **cd ..**
 Ir para diretório anterior| **cd -**
 Ir para a pasta home do usuario| **cd**
 Representa o diretório Home| **$HOME**
+Ir para início da linha| **CTRL A**
+Ir para o fim da linha| **CTRL E**
+Cancelar linha| **CTRL C**
 
 #### Modo listar arquivos (ls)
 
