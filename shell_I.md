@@ -35,8 +35,11 @@ Exibir arquivos com seu id (hinode)| **ls -i**
 Listar todos os arquivos em formato especifico| __ls *.md__ (md = ex. de formato)
 Listar arquivos ocultos e não ocultos| **ls -a**
 Listar arquivos e suas permissões| **ls -l** ou **ll**
-Listar arquivos e diretórios adicionando barra aos diretórios| **ls -p**
 Listar arquivos e diretórios inclusive ocultos| **ls -la**
+Listar arquivos e diretórios adicionando barra aos diretórios| **ls -p**
+lista arquivos e diretórios separados por vírgulas| **ls -m**
+lista os arquivos por ordem decrescente das datas de atualização| **ls -t**
+lista em ordem reversa| **ls -r**
 *(.)* | diretório atual
 *(..)* | diretório anterior
 
