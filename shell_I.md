@@ -23,7 +23,11 @@ Função|Comando|
 Exibir arquivos com seu id (hinode)| **ls -i**
 Listar todos os arquivos em formato especifico| __ls *.md__ (md = ex. de formato)
 Listar arquivos ocultos e não ocultos| **ls -a**
-Listar arquivos e suas permissões| **ls -l**
+Listar arquivos e suas permissões| **ls -l** ou **ll**
+Listar arquivos e diretórios adicionando barra aos diretórios| **ls -p**
+Listar arquivos e diretórios inclusive ocultos| **ls -la**
+*(.)* | diretório atual
+*(..)* | diretório anterior
 
 #### Gerenciar permissões de arquivos
 
@@ -34,8 +38,8 @@ Ex:.2 | -rwxr--r--  1 fabricio  staff  0 23 Jan 21:56 file.md
 Ex:.3 | lrwxr--r--  1 fabricio  staff  0 23 Jan 21:56 link.md
 Tipos de permissões| r (read), w (write), x (execute)
 Outra descriminação| d (diretório), - (arquivo comum), l (link)
-Grupo de permissões| u (usuários), g (grupo), o (outros)
-Alterar permissões| **chmod** (ex. chmod o=r file.md)
+Grupo de permissões| u (usuários), g (grupo), o (outros), a (todos)
+Alterar permissões| **chmod** (ex. chmod o=r file.md) ou (o+r, o-r)
 Alterar permissões de um link simbólico| **chmod -h** 
 
 #### Criar variavel
