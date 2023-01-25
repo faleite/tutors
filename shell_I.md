@@ -9,6 +9,8 @@ man man| *Mostrar documentação da documentação*
 man -f ls| *Mostrar documentação sucinta da função ls*
 man -w ls| *Mostrar path da documentação de ls*
 
+> *Manual do [**man**](https://guialinux.uniriotec.br/man/) em português online*
+
 #### Comandos
 
 Função|Comando|
