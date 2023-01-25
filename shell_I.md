@@ -40,7 +40,19 @@ Tipos de permissões| r (read), w (write), x (execute)
 Outra descriminação| d (diretório), - (arquivo comum), l (link)
 Grupo de permissões| u (usuários), g (grupo), o (outros), a (todos)
 Alterar permissões| **chmod** (ex. chmod o=r file.md) ou (o+r, o-r)
-Alterar permissões de um link simbólico| **chmod -h** 
+Alterar permissões de um link simbólico| **chmod -h**
+
+#### Alterar data de arquivo ou diretório com o "touch"
+
+Comando|Exemplo|
+-------|------|
+**touch -t**| touch -t 201307150842 file.txt
+Data/Hora|Descrição
+2013| ano
+07| mês
+15| dia
+0842| hora
+
 
 #### Criar variavel
 
@@ -113,6 +125,7 @@ Exibir conteúdo do arquivo no shell| **cat nome-arquivo.txt**
 Exibir conteúdo de mais de um arquivo no shell| **cat arq2.txt arq1.txt**
 Concatenar texto de mais de um arquivo| **cat arq2.txt arq1.txt >> arqConcatenado.txt**
 Exibir conteúdo do arquivo com linhas numeradas no shell| **cat -n arqConcatenado.txt**
+Mostrar informações adicionais com o **cat**| **cat -e** (ex. exibe quebra de linhas)
 
 #### Pipe e bc
 
