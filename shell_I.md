@@ -1,5 +1,14 @@
 # Shell - Módulo I - *"Comandos Básicos"*
 
+#### Acessar documentação do shell
+
+Comando|Função|
+------|-------|
+man ls| *Mostrar documentção da funçao ls*
+man man| *Mostrar documentação da documentação*
+man -f ls| *Mostrar documentação sucinta da função ls*
+man -w ls| *Mostrar path da documentação de ls*
+
 #### Comandos
 
 Função|Comando|
@@ -653,11 +662,11 @@ find .|*Encontra todos os arquivos em arvores na pasta atual.*
 find . -name [file.txt]| *Busca pelo respectivo  arquivo na pasta atual.*
 find . -maxdepth [n]| *Mostra todos os arquivos em grau de diretório passados no parâmetro [n], onde representa 0 como primeiro diretório, 1 segundo dir. e assim por diante.*
 
-#### Acessar documentação do shell
+#### Uso do "*" e "?"
 
 Comando|Função|
 ------|-------|
-man ls| *Mostrar documentção da funçao ls*
-man man| *Mostrar documentação da documentação*
-man -f ls| *Mostrar documentação sucinta da função ls*
-man -w ls| *Mostrar path da documentação de ls*
+echo *.txt| *Mostra todos os arquivos no formato **.txt***
+echo t*.txt| *Mostra todos os arquivos que iniciam com **t** e terminam com **.txt***
+echo t???.txt| *iniciam **t** mais quaisquer três letras a seguir e termina em **.txt***
+
