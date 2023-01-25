@@ -36,6 +36,7 @@ Tipos de permissões| r (read), w (write), x (execute)
 Outra descriminação| d (diretório), - (arquivo comum), l (link)
 Grupo de permissões| u (usuários), g (grupo), o (outros)
 Alterar permissões| **chmod** (ex. chmod o=r file.md)
+Alterar permissões de um link simbólico| **chmod -h** 
 
 #### Criar variavel
 
