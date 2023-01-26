@@ -250,3 +250,25 @@ APAGAR TAGS: **git tag -d v1.0** (v1.0 -> nome da tag)
 4. LISTAR A VARIÁVERIS QUE FORAM CONFIGURADAS NO GIT: **git config --list**
 
 5. FAZER COMMIT COM MENSSAGEM PADRONISADA: **git commit**
+___
+
+##### Exibir informações resumidas em uma linha (hash completa e comentário)
+
+	git log --pretty=oneline
+
+##### Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
+
+	git log --pretty=format:"%h - %an, %ar : %s"
+
+* %h: Abreviação do hash;
+* %an: Nome do autor;
+* %ar: Data;
+* %s: Comentário.
+
+##### Exibir histórico com formatação específica, com hash não abreviada. Ex:
+```c
+git log --pretty=format:"%H"  // Exibe id (hash) compelto dos commits
+
+// outra forma (a flag -1 indica o numero de commits a serem mostrados)
+git log -1 --format="%H"  // Exibe id (hash) completo do primeiro commit
+```
