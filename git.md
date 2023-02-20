@@ -1,20 +1,68 @@
-# G I T  /  G I T H U B
+# Git
 
-## INICIAR REPOSITÓRIO
+*"É um consenso que a verdade está em um lugar, e geralmente está longe."*
 
-NO DIRETÓRIO CRIADO PARA O GIT DE O COMANDO: **git init**
+### Principais Ações
 
-* Sera criado uma pasta .git no diretório.
+Ação | Comando |
+-----|---------|
+Transformar uma pasta em pasta git| **git init** (cria pasta **.git** na pasta atual)
+Saber onde você esta no git| **git status**
+Preparar arquivo a ser enviado a um commit| **git add \<arquivo>**
+Desfazer preparação de arquivo a ser commitado| **git rm --cached \<arquivo>**
+Fazer registro do arquivo (commit)| **git commit -m 'Menssagem sobre o arquivo!'**
+Ver todas as alterações feitas no git| **git log** (digite **q** para sair do git log)
+Ver diferenças entre as versões dos arquivos| **git diff**
+Preparar todos os arquivos para um commit| **git add .**
+Guardar todos arquivos trackeados pelo git| **git add -u**
 ___
 
-SABER ESTADO DO GIT: **git status**
+### Branch e Checkout
 
-GUARDAR ARQUIVO NO GIT: **git add nomearquivo.txt**
+Ação | Comando |
+-----|---------|
+Mostrar branches existentes locais| **git branch**
+Mostrar branches existentes locais e remotas| **git branch -a**
+Criar uma nova branch| **git branch \<nome>**
+Cria uma nova branch e muda para a branch criada| **git checkout -b \<nomeBranch>**
+Mudar de branch| **git checkout \<nomeBranch>**
+Ir para um commit específico| **git checkout \<numeroCommit>**
+Apagar uma branch| **git branch -d \<nomeBranch>**
+Reverte o arquivo para o ultimo commit| **git checkout -\- \<nomeArquivo>**
+Desfazer preparação de arquivos modificados para o próximo commit| **git reset HEAD \<nomeArquivo>**
 
-GUARDAR TODOS ARQUIVOS TRACKEADOS PELO GIT: **git add -u**
+### Mais sobre Branch
 
-1. GUARDAR TUDO NO GIT: **git add .**
-2. FAZER COMMIT (FAZER REGITRO DO ARQUIVO): **git commit -m 'Menssagem sobre o arquivo!'**
+Ação | Comando |
+-----|---------|
+Renomear branch local| **git branch -m \<novoNome>**
+Renomear uma branch enquanto esta em outra| **git branch -m \<nomeAntigo> \<novoNome>**
+Renomear branch default global| **git config --global init.defaultBranch \<novo-nome>**
+Mostrar nome e ultimo commit da branch local| **git branch -v**
+Mostrar nome e ultimo commit da branch remota| **git branch -vv**
+___
+
+*
+*
+*
+___
+# Em construção...
+___
+
+### Remoto
+Ação | Comando |
+-----|---------|
+Mostrar nome do repositótio remoto| **git remote**
+Mostrar caminho do repositótio remoto| **git remote -v**
+___
+
+### Git Merge
+
+Ação | Comando |
+-----|---------|
+Emcorporar modificação de uma outra branch na branch master| **git merge \<nomeBranch>**
+___
+
 
 Dica - [master (memória-raiz) eff6929] arquivo Olá mundo!
  Committer: Fabricio  Araujo Leite <fabricio@faleite.home>
@@ -34,33 +82,6 @@ Após fazer isto, podes corrigir a identidade usada nesta memória com:
  1 file changed, 2 insertions(+)
  create mode 100644 teste.txt
 
-VER TODAS AS ALTERAÇÕES FEITAS NO GIT: **git log** -> **q** para sair
-___
-
-IR PARA COMMIT ANTERIOR, ATRAVES DO HASH (NUMERO DO COMMIT)
-**git checkout numerodocommit**
-
-DICA:
-Estás em 'HEAD desanexada'. Podes olhar, fazer mudanças experimentais e
-memorizá-las, e, neste estado, podes descartar qualquer memória que faças
-sem impactar qualquer ramo fazendo uma troca de volta para um ramo.
-
-Se queres criar um novo ramo para reter as memórias que criaste, podes
-fazê-lo (agora ou mais tarde) usando -c com o comando switch. Exemplo:
-
-  git switch -c <novo-nome-de-ramo>
-
-Ou desfazer esta operação com:
-
-  git switch -
-
-VER TEXTO DO ARQUIVO NO PROMPT: **cat teste.txt**
-(teste.txt -> nome do arquivo)
-
-IR/VOLTAR PARA O COMMIT MASTER: **git checkout master**
-
-MOSTRAR NO GIT O QUE MUDOU DE AGORA PARA O ULTIMO COMMIT:
-**git diff**
 ___
 
 ## GIT LOG
@@ -87,20 +108,6 @@ MOSTRAR CADA COMMIT EM APENAS UMA LINHA: **git log --oneline**
 MOSTRAR OS COMMITS POR AUTOR: **git log --author="Fabricio Araujo"**
 
 BUSCAR COMMITS POR PALAVRAS: **git log --grep="Olá"**
-___
-
-## GIT BRANCH - GIT MERGE
-
-CRIAR UMA NOVA BRANCH: **git checkout -b aulaBranch**
-
-VOLTAR PARA O COMMIT MASTER: **git checkout master**
-
-LISTAR TODAS AS MINHAS BRANCH: **git branch**
-
-VER ULTIMO COMMIT DE CADA BRANCH: **git branch -v**
-
-EMCORPORAR MODIFICAÇÃO DE UMA OUTRA BRANCH NA BRANCH MASTER: **git merge aulaBranch**
-(aulaBranch -> nome da branch)
 ___
 
 ## GIT CONFIG
@@ -204,27 +211,6 @@ TRASER A BRANCH REMOTA PARA A BRANCH LOCAL: **git merge**
 TRASER A BRANCH ORIGIN/MAIN PARA A BRANCH MAIN: **git merge origin/main**
 ___
 
-## BRANCH
-
-RENOMEAR BRANCH LOCAL: **git branch -m 'novo-nome'**
-(Você deve estar na branch que deseja alter o nome)
-
-RENOMEAR UMA BRANCH ENQUANTO ESTA EM OUTRA: **git branch -m 'nome-antigo' 'novo-nome'**
-(Se você quer alterar o nome de outra branch, enquanto está na master, por exemplo)
-
-RENOMEAR BRANCH DEFAULT GLOBAL: **git config --global init.defaultBranch <novo-nome>**
-___
-
-MOSTRAR NOME DO REPOSITÓTIO REMOTO: **git remote**
-
-MOSTRAR CAMINHO DO REPOSITÓTIO REMOTO: **git remote -v**
-
-MOSTRAR BRANCHES EXISTENTES NO REPOSITÓTIO: **git branch**
-
-MOSTRAR NOME E ULTIMO COMMIT DA BRANCH LOCAL: **git branch -v**
-
-MOSTRAR NOME E ULTIMO COMMIT DA BRANCH REMOTA: **git branch -vv**
-___
 
 ## TAGS DE COMMIT NO GIT
 
