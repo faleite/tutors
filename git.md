@@ -13,6 +13,7 @@ Desfazer preparação de arquivo a ser commitado| **git rm --cached \<arquivo>**
 Fazer registro do arquivo (commit)| **git commit -m 'Menssagem sobre o arquivo!'**
 Ver todas as alterações feitas no git| **git log** (digite **q** para sair do git log)
 Ver diferenças entre as versões dos arquivos| **git diff**
+Mostrar difença entre uma branch e outra| **git diff main origin/main**
 Preparar todos os arquivos para um commit| **git add .**
 Guardar todos arquivos trackeados pelo git| **git add -u**
 ___
@@ -42,219 +43,227 @@ Mostrar nome e ultimo commit da branch local| **git branch -v**
 Mostrar nome e ultimo commit da branch remota| **git branch -vv**
 ___
 
-*
-*
-*
-___
-# Em construção...
+### Merge e Rebase
+
+- Estas duas ferramentas permitem atualizar seu branch local a partir de\
+outro branch
+- Produzem quase o mesmo resultado final
+- O git merge cria uma nova ramificação que contém as alterações de todas\
+as ramificações combinadas
+- O git rebase pega todas as alterações de uma ramificação e aplica as mudanças\
+diretamente na outra ramificação, como se o trabalho tivesse sido feito em\
+sequência, em uma única ramificação.
+
+#### Rebase
+
+- Serve para quando você quer colocar outro branch sob seu branch, sobrepor todos os commits\
+e resolver tudo o que acontecer.
+- Rebase acha o ponto comum e pega todos os commits a partir dele, separa eles e\
+volta ao branch principal e aplica todos os commits por cima.
+
+Ação | Comando |
+-----|---------|
+Faça o rebase do main no meu branch| **git rebase \<main>**
+Emcorporar modificação de uma outra branch na branch master| **git merge \<nomeBranch>**
+Continuar o rebase (Após alterar/corrigir arquivo/conflito)| **git rebase --continue**
+Alterar o commit (mensagem do commit)| **git commit --amend**
+Caso não funcione git commit --amend| **git commit --amend -m "mensagem"**
+Alterar arquivo do ultimo commit sem alterar mensagem no git| **git commit --amend --no-edit**
+
+#### Mais comandos
+
+Ação | Comando |
+-----|---------|
+Editar em sequência vários commits| **git rebase -i HEAD~4**
+
+Observações / Etapas |
+------------|
+*HEAD~4 = edita os 4 ultimos comites*
+*Para editar os commits substitua a palavra 'pick' por 'edit'*
+*Repita os dois ultimos passos até concluir o rebase.*
+
+Ação | Comando |
+-----|---------|
+Comprimir vários commits em um unico commit|**git rebase -i HEAD~4**
+
+Observações / Etapas|
+------------|
+**-i HEAD~4** faz o squash nos 4 ultimos commits
+Para juntar os commits ao commit anterior substitua a palavra 'pick' por 'squash'
+Alterar o commit: **git commit --amend**
+Continuar o rebase para fazer o squash: **git rebase --continue**
 ___
 
-### Remoto
+#### Merge
+- Quando quero pegar um branch, todos os seus commits e suas diferenças e fazer\
+um commit de merge (uma fundição), que vai colocar todos esses commits no meu\
+branch. Em vez de colocar abaixo, coloca acima.
+
+Ação | Comando |
+-----|---------|
+Fazer merge da branch principal com a sua branch| **git merge \<suaBranch>**
+
+Observações | Etapas |
+------------|--------|
+Ir para a branch principal| **git checkout \<main>**
+Fazer o merge | **git merge \<suaBranch>**
+Voltar para a sua branch| **git checkout \<suaBranch>**
+Traser a branch origin/main para a branch main| **git merge origin/main**
+___
+
+### Stash
+
+- É uma ferramenta que permite guardar rapidamente as modificações e trazê-las\
+de volta.
+- Permite deixar de lado modificações feitas, quando você precisa urgentemente\
+fazer outra coisa.
+- É como se você criasse pequenas branches.
+- Permite limpar rapidamente o git para poder fazer uma operação nele\
+e voltar.
+- Git stash pega tudo que foi modificado na pasta, cria um pequeno commit\
+e guarda
+- Não é um commit verdadeiro, tem como vantagem ir rapidamente de um lado\
+para o outro.
+
+Ação | Comando |
+-----|---------|
+Criar um stash| **git stash**
+Ver o que há no stash| **git stash list**
+Reaplicar commit stash| **git stash pop**
+___
+
+### Uso remoto do git
+
+- Enviar projeto para repositório no github via SSH
+
+Ação | Comando |
+-----|---------|
+Conectar diretório ao repositório| **git remote add origin \<endereçoSshGit>**
+Nomear branch do repositótio| **git branch -M main**
+Envia tudo ao github e faz a branch local seguir a branch remoto| **git push -u origin main**
+Clonar repositório remoto| **git clone \<endereçoSshGit>**
+Trazer/recuperar informações remotas de vários branches| **git fetch**
+Trazer/recuperar informações remotas de todos as branches| **git fetch --all**
+Atualizar informações na branch main trazidas pelo **fetch**| **git rebase origin/main**
+Fazer **fetch** e **rebase** ao mesmo tempo| **git pull --rebase**
+Fazer **fetch** e **merge** ao mesmo tempo| **git pull**
+Fazer **fetch** e **merge** em branch especifica| **git pull origin \<nome-branch>**
+Fazer **fetch** em branch especifica| **git fetch origin \<nome-branch>**
+
+
+___
+
+Observações |
+------------|
+Endereço ssh é parecido com: *git@github.com:faleite/tutors.git*
+
+#### Mais comandos
+
 Ação | Comando |
 -----|---------|
 Mostrar nome do repositótio remoto| **git remote**
 Mostrar caminho do repositótio remoto| **git remote -v**
+Fazer **fetch** e **rebase** ao mesmo tempo| **git pull --rebase --origin main**
+Mostrar commits remoto| **git log origin/main**
+Criar arquivo no repositório| **touch \<nomeArquivo>**
+Criar uma linha de texto no arquivo| **echo "linha de text" >> \<nomeArquivo>**
+Mostrar conteúdo do arquivo| **cat \<nomeArquivo>**
+Enviar commit para o github| **git push**
 ___
 
-### Git Merge
+## Mais comandos do Git
+
+### Git Log
 
 Ação | Comando |
 -----|---------|
-Emcorporar modificação de uma outra branch na branch master| **git merge \<nomeBranch>**
-___
-
-
-Dica - [master (memória-raiz) eff6929] arquivo Olá mundo!
- Committer: Fabricio  Araujo Leite <fabricio@faleite.home>
-Teu nome e endereço de email foram configurados automaticamente com base
-no teu nome de utilizador e nome de máquina. Por favor, verifica se estão
-corretos.
-Podes suprimir esta mensagem configurando-os explicitamente. Executa
-o comando seguinte e segue as instruções no editor para editar
-o ficheiro de configuração:
-
-    git config --global --edit
-
-Após fazer isto, podes corrigir a identidade usada nesta memória com:
-
-    git commit --amend --reset-author
-
- 1 file changed, 2 insertions(+)
- create mode 100644 teste.txt
-
-___
-
-## GIT LOG
-
-VER CADA UMA DAS ALTERAÇÕES QUE JA FORAM FEITAS: **git log -p**
-
-VER DUAS ULTIMAS ALTERAÇÕES: **git log -p -2**
-(Pode mudar o numero de alterações a ver -> -1 ou -2...)
-
-VER QUAIS ARQUIVOS FORAM ALTERADOS: **git log --stat**
-
-VER ULTIMA INCLUSÃO E O QUE FOI ALTERADO: **git log -1 --stat**
-
-VER A ALTERAÇÃO DO ULTIMO COMMIT: **git log -p -1**
-
-MONITORAR ARQUIVO ESPECÍFICO: **git log -- teste.txt**
-
-MOSTRAR GRÁFICO DAS ALTERAÇÕES: **git log --graph**
-
-MOSTRAR GRÁFICO DAS ALTERAÇÕES EM APENAS UMA LINHA: **git log --graph --oneline**
-
-MOSTRAR CADA COMMIT EM APENAS UMA LINHA: **git log --oneline**
-
-MOSTRAR OS COMMITS POR AUTOR: **git log --author="Fabricio Araujo"**
-
-BUSCAR COMMITS POR PALAVRAS: **git log --grep="Olá"**
-___
-
-## GIT CONFIG
-
-LISTAR AS VARIÁVEIS DE CONFIGURAÇÃO DO GIT: **git config -l** ou  **git config --list**
-
-LISTAR AS VARIÁVEIS LOCAL DO GIT: **git config -l --local**
-
-LISTAR AS VARIÁVEIS GLOBAL DO GIT: **git config -l --global**
-
-CONFIGURAR USER NAME: **git config user.name "Nome Usuario"**
-
-CONFIGURAR USER EMAIL: **git config user.email teste@gmail.com**
-
-CRIAR ATALHOS COM ALIAS DO GIT: (alias.conf -> conf = nome do atalho)
-**git config --local alias.conf 'config --local -l'**
-
-DELETAR ATALHO FEITO NO GIT: **git config --unset alias.conf** (alias.conf -> nome atalho)
-___
-
-## GIT COMMIT --AMEND
-
-ALTERAR A MENSSAGEM DO ULTIMO COMMIT: **git commit --amend**
-(o ammend altera o commit para um novo, fazendo a mudança do hash)
-
-ALTERAR ARQUIVO DO ULTIMO COMMIT: **git commit --amend**
-(depois que alterar o arquivo, voce pode passar este commando para alterar o commi
-(depois que alterar o arquivo, voce pode passar este commando para alterar o commit)
-
-ALTERAR ARQUIVO DO ULTIMO COMMIT SEM ALTERAR MENSAGEM NO GIT: **git commit --amend --no-edit**
-
-ADICIONAR CO-AUTOR NO COMMIT: **git commit -m 'Menssagem sobre o arquivo!
->
-> Co-authored-by: nome <email.@email.com>'**
-___
-
-## GIT REBASE
-
-EDITAR EM SEQUÊNCIA VÁRIOS COMMITS: **git rebase -i HEAD~4** (HEAD~4 = edita os 4 ultimos comites)
--> para editar os commits substitua a palavra 'pick' por 'edit'
--> Alterar o commit: **git commit --amend**
--> Continuar o rebase: **git rebase --continue**
--> Repita os dois ultimos passos até concluir o rebase.
-
-COMPRIMIR VÁRIOS COMMITS EM UM UNICO COMMIT COM SQUASH:
--> **git rebase -i HEAD~4** (para faser squash nos 4 ultimos commits)
--> para juntar os commits ao commit anterior substitua a palavra 'pick' por 'squash'
--> Alterar o commit: **git commit --amend**
--> Continuar o rebase para fazer o squash: **git rebase --continue**
-___
-
-## GIT CLONE
-
-CLONAR REPOSITÓRIO VIA HTTPS:
--> Dentro do diretório passe o respectivo comando junto com o link https do repesitório:
-**git clone https://github.com/faleite/EstruturaDecisao**
-
-CRIAR ARQUIVO NO REPOSITÓRIO: **touch 'nome-arquivo.txt'**
-
-CRIAR UM ALINHA DE TEXTO E ENVIAR PARA O ARQUIVO:
-**echo "Criando uma linha de exemplo" >> 'nome-arquivo.txt'**
-
-MOSTRAR CONTEÚDO DO ARQUIVO: **cat 'nome-arquivo.txt'**
-
-ENVIAR COMMIT PARA O GITHUB: **git push**
-___
-
-## OS TRÊS ESTÁGIOS DO GIT
-
-WORKING TREE (DIRECTORY) -> O arquivo esta apenas no diretório
-
-STAGING AREA -> O arquivo esta numa area intermediaria do git quando passamos o -> **git add**
-
-.GIT DIRECTORY (REPOSITORY) -> O arquivo esta no git quando fazemos o -> commit
-___
-
-## ENVIAR PROJETO PARA REPOSITÓRIO NO GITHUB VIA SSH
-
-1. CONECTAR DIRETÓRIO AO REPOSITÓRIO:
-**git remote add origin git@github.com:faleite/tutors.git**
-
-2. NOMEAR BRANCH DO REPOSITÓTIO:
-**git branch -M main**
-
-3. ENVIAR ARQUIVOS PARA O GITHUB: **git push -u origin main**
-___
-
-## BAIXAR ARQUIVOS DO GITHUB:
-
-TRASER BRANCH DO GITHUB E INCORPORAR NA BRANCH LOCAL: **git pull**
-    - git pull -> é a combinação de: git fetch + git merge)
-    - Para usar trazer branch especifica utiliza -> **git pull origin <nome-branch>**
-
-BAIXAR ALTERAÇÕES DO REPOSITÓRIO REMOTO, SEM INCORPORAR NO REPOSITÓRIO LOCAL: **git fetch**
-    - Para usar trazer branch especifica utiliza -> **git fetch origin <nome-branch>**
-
-MOSTRAR DIFENÇA ENTRE UMA BRANCH E OUTRA: **git diff main origin/main**
-
-TRASER A BRANCH REMOTA PARA A BRANCH LOCAL: **git merge**
-
-TRASER A BRANCH ORIGIN/MAIN PARA A BRANCH MAIN: **git merge origin/main**
-___
-
-
-## TAGS DE COMMIT NO GIT
-
-CRIAR UMA TAG: **git tag -a v1.0 -m 'Primeira Versão'**
-(v1.0 -> nome da tag, Primeira Versão -> mensagem da tag)
-
-LISTAR TODAS AS TAGS CRIADAS: **git tag**
-
-LISTAR TODAS AS TAGS CRIADAS E SUAS RESPECTIVAS MENSAGENS: **git tag -n**
-
-MOSTRAR O CONTEÚDO DAS TEGS: **git show --tags**
-
-APAGAR TAGS: **git tag -d v1.0** (v1.0 -> nome da tag)
-
-## MENSSAGEM PADRONIZADA DO COMIIT NO GIT:
-
-1. CRIA ARQUIVO COM O NOME: **.git message**
-
-2. EDITE UMA MENSSAGEM PADRÃO NESTE ARQUIVO: **.git message**
-
-3. CONFIGURAR O TEMPLATE DA MENSSAGEM NO GIT: **git config commit.tamplate .gitmessage**
-
-4. LISTAR A VARIÁVERIS QUE FORAM CONFIGURADAS NO GIT: **git config --list**
-
-5. FAZER COMMIT COM MENSSAGEM PADRONISADA: **git commit**
-___
-
-##### Exibir informações resumidas em uma linha (hash completa e comentário)
-
-	git log --pretty=oneline
-
-##### Exibir histórico com formatação específica (hash abreviada, autor, data e comentário)
-
-	git log --pretty=format:"%h - %an, %ar : %s"
-
-* %h: Abreviação do hash;
-* %an: Nome do autor;
-* %ar: Data;
-* %s: Comentário.
-
-##### Exibir histórico com formatação específica, com hash não abreviada. Ex:
-```c
-git log --pretty=format:"%H"  // Exibe id (hash) compelto dos commits
-
-// outra forma (a flag -1 indica o numero de commits a serem mostrados)
-git log -1 --format="%H"  // Exibe id (hash) completo do primeiro commit
+Ver cada uma das alterações que ja foram feitas| **git log -p**
+Ver duas ultimas alterações| **git log -p -2** (-2 ou -1 ...etc)
+Ver quais arquivos foram alterados| **git log --stat**
+Ver ultima inclusão e o que foi alterado| **git log -1 --stat**
+Ver a alteração do ultimo commit| **git log -p -1**
+Monitorar arquivo específico| **git log -- \<nomeArquvio>**
+Mostrar gráfico das alterações| **git log --graph**
+Mostrar gráfico das alterações em apenas uma linha| **git log --graph --oneline**
+Mostrar cada commit em apenas uma linha| **git log --oneline**
+Mostrar cada commit em apenas uma linha de forma resumida| **git log --pretty=oneline**
+Mostrar os commits por autor| **git log --author="Fabricio Araujo"**
+Buscar commits por palavras| **git log --grep="Olá"**
+
+### Git log detalhado
+
+flag | Ação |
+-----|---------|
+%h| Abreviação do hash
+%an| Nome do autor
+%ar| Data
+%s| Comentário
+
+- Exemplo de histórico com formatação específica
+```bash
+# hash abreviada, autor, data e comentário
+git log --pretty=format:"%h - %an, %ar : %s"
 ```
+
+- Exemplo de histórico com formatação específica, com hash não abreviada
+```bash
+# Exibe id (hash) compelto dos commits
+git log --pretty=format:"%H"
+
+# outra forma (a flag -1 indica o numero de commits a serem mostrados)
+git log -1 --format="%H"  # Exibe id (hash) completo do primeiro commit
+```
+___
+
+### Git Config
+
+Ação | Comando |
+-----|---------|
+Listar as variáveis de configuração do git| **git config -l** / **git config --list**
+Listar as variáveis local do git| **git config -l --local**
+Listar as variáveis global do git| **git config -l --global**
+Configurar user name| **git config user.name \<nomeUsuario>**
+Configurar user email| **git config user.email teste@gmail.com**
+Criar atalhos com alias do git|
+alias.conf -> conf = nome do atalho|**git config --local alias.conf 'config --local -l'**
+Deletar atalho feito no git| **git config --unset alias.conf** (alias.conf -> nome atalho)
+
+- Adicionar co-autor no commit
+```bash
+git commit -m 'Menssagem sobre o arquivo!
+>
+> Co-authored-by: nome <email.@email.com>'
+```
+___
+
+### Os três estágios do git
+
+Estágio | Estado |
+--------|--------|
+WORKING TREE (DIRECTORY)| O arquivo esta apenas no diretório
+STAGING AREA| O arquivo está numa area intermediária do git (quando passamos o **git add**)
+.GIT DIRECTORY (REPOSITORY)| O arquivo esta no git (quando fazemos o **commit**)
+___
+
+### Tags de commit no git
+
+Ação | Comando |
+-----|---------|
+Criar uma tag| **git tag -a v1.0 -m \<nomeVersao>**
+v1.0| é o nome da Tag
+\<nomeVersao>| é mensagem da tag
+Listar todas as tags criadas| **git tag**
+Listar todas as tags criadas e suas mensagens| **git tag -n**
+Mostrar o conteúdo das tegs| **git show --tags**
+Apagar tags| **git tag -d v1.0** (v1.0 = nome da tag)
+___
+
+### Menssagem padronizada do comiit no git:
+
+ção | Comando |
+-----|---------|
+Cria arquivo com o nome| **.git message**
+Edite uma menssagem padrão neste arquivo| **.git message**
+Configurar o template da menssagem no git| **git config commit.tamplate .gitmessage**
+Listar a variáveis que foram configuradas no git| **git config --list**
+Fazer commit com menssagem padronisada| **git commit**
