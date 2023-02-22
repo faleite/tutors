@@ -260,7 +260,7 @@ ___
 
 ### Menssagem padronizada do comiit no git:
 
-ção | Comando |
+Ação | Comando |
 -----|---------|
 Cria arquivo com o nome| **.git message**
 Edite uma menssagem padrão neste arquivo| **.git message**
