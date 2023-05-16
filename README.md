@@ -1,2 +1,2 @@
-# tutors
-Tutores com explicações rápidas e práticas de ferramentas diversas para programação
+# TUTORS
+Tutorias rápidos e práticos de ferramentas diversas para programação
