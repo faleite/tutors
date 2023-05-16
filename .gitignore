@@ -1,5 +1,9 @@
 # Vim, Vscode, Obsedian, Macos, Linux
 
+### Obsidian ###
+# config dir
+.obsidian/
+
 ### macOS ###
 # General
 .DS_Store
