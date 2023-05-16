@@ -3,6 +3,7 @@
 ## [**shell_I**](https://github.com/faleite/tutors/blob/main/src/shell_I.md)
 ## [**shell_II**](https://github.com/faleite/tutors/blob/main/src/shell_II.md)
 ## [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
+## [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger_gdb.md)
 ## [**markdown**](https://github.com/faleite/tutors/blob/main/src/markdown.md)
 ## [**tmux**](https://github.com/faleite/tutors/blob/main/src/tmux.md)
 ## [**virtualenv**](https://github.com/faleite/tutors/blob/main/src/virtualenv.md)
