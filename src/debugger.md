@@ -176,5 +176,5 @@ Descricao | Comando
 Descricao | Comando
 ----------|:------:
 *Compilacao de codigo para melhor uso do Valgrind* | `gcc -g file.c -o file`
-*Uso geral* | `valgrind` 
+*Uso geral* | `valgrind ./file` 
 *Monitora a alocação/uso de memória e fornece infos sobre vazamentos de memória* | `valgrind --leak-check=full ./file`
