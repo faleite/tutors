@@ -1,6 +1,6 @@
 # Introdução ao GDB
 
-# O que é o GDB
+## O que é o GDB
 
 -   O GDB (_GNU Project Debugger_) é uma ferramenta para:
     -   observar um programa enquanto este executa
@@ -12,44 +12,7 @@
     -   imprimir valores de variáveis
 -   Suporta C, C++, Objective-C, Ada e Pascal (entre outras linguagens)
 
-# Usar o GDB
-
--   O GDB opera sobre _ficheiros executáveis_ (não diretamente sobre o código-fonte)
--   Para usar o GDB com um programa em C devemos compilar com opção `-g`:
-
-```sh
-$ gcc -g -o programa programa.c
-```
-
--   A opção `-g` indica ao compilador para incluir no executável informação extra para o GDB
-
-# Usar o GDB
-
--   Em seguida executamos `gdb` sobre o ficheiro executável compilado:
-
-```sh
-$ gdb programa
-```
-
--   Após algumas mensagens obtemos a indicação de que o GDB está à espera de um comando:
-
-```sh
-...
-(gdb) 
-```
-
-# Usar o GDB
-
--   Tal como a _shell_ de Linux, o GDB é um _programa interativo_:
-    -   lê um comando do teclado (até _Enter_)
-    -   processa o comando e mostra resultados
-    -   volta a esperar um novo comando
--   O comando `quit` termina a sessão
-    -   alternativa: `Ctrl-D` (end-of-file)
-    -   podemos abreviar comandos  
-        (e.q., escrever `q` em vez de `quit`)
-
-# Exemplo
+## Exemplo para teste
 
 -   Vamos usar o GDB sobre um programa de exemplo
 -   O programa deveria calcular o _factorial_ de um inteiro positivo
@@ -66,7 +29,7 @@ Introduza um inteiro positivo:4
 Factorial 4 = 0
 ```
 
-# Programa errado
+### Programa errado
 
 ```c
 #include <stdio.h>
@@ -84,80 +47,36 @@ int main(void) {
 }
 ```
 
-# Usar o GDB
+## Debugger 
+*Uso basico, passo a passo:*
+Step | Descricao <-> Comando
+:----:|--------------------
+**01** | *Compilar o programa com a opção debugging*
+*Cmd:* | `$ gcc -g -o factorial factorial.c`
+**02** | *Executar o GDB com o executável compilado*
+*Cmd:* | `$ gdb factorial`
+**03** | *correr o nosso programa dentro do GDB*
+*Cmd:* | `run` ou `r`
+**04** | *Definir início de parada (neste caso no início da função)*
+*Cmd:* | `break main` ou `b main`
+**05** | *Mostra a linha de codigo que esta prestes a ser executada*
+*Cmd:* | `run` ou `r`
+**06** | *Ir para a proxima linha (Executa a linha anterior)*
+*Cmd:* | `next` ou `n`
+**07** | *Podemos obter o codigo centralizado em torno da linha que estamos*
+*Cmd:* | `list` ou `l`
+**08** | *Ver o proximo conjunto de linhas (Podemos fazer ate chegar ao final do codigo)*
+*Cmd:* | `list` ou `l`
+**09** | *Para voltar a um perimetro anterior podemos usar o numero da linha*
+**Cmd:** |`list 12` ou `l 12`
+**10** | *Verificar valor da variavel (Neste caso "n" e a variavel)*
+*Cmd:* | `print n` ou `p n`
+**10** | *Definir o breakpoint em uma linha especifica*
+*Cmd:* | `break main.c:8` ou `b main.c:8`
+**11** | *Avacar no breakpoint*
+*Cmd:* |`continue` ou `c`
 
--   Vamos usar o GDB para perceber o erro
--   Vídeo no YouTube:  
-    [Introduction to GDB: a tutorial](https://youtu.be/sCtY--xRUyI) (Harvard CS50)
-
-# Usando o GDB
-
-Recompilar o programa com opção _debugging_:
-
-```sh
-$ gcc -g -o factorial factorial.c
-```
-
-Executar o GDB com o executável compilado:
-
-```sh
-$ gdb factorial
-```
-
-# Executar o programa
-
-Usamos o comando `run` para correr o nosso programa dentro do GDB:
-
-```sh
-(gdb) run
-Starting program...
-Introduza um inteiro positivo:4
-Factorial 4 = 0
-[Inferior 1 (process 9885) exited...
-```
-
-# Executar o programa (cont.)
-
--   O programa terminou e deu resultado errado
--   Neste momento já não podemos observar o estado de variáveis
--   Vamos correr novamente, mas desta vez pedir para parar a execução a meio
--   Fazemos isso definindo um _breakpoint_ no programa
-
-# Definir _breakpoints_
-
-`break` _fun_
-
-parar a execução no início da função _fun_
-
-`break` _n_
-
-parar a execução no início linha número _n_
-
-  
-Podemos usar `list` para listar o programa juntamente com números de linhas.
-
-# Observar valores de variáveis
-
-`print` _var_
-
-`print` _expr_
-
-mostrar o valor de uma variável ou expressão
-
-`display` _var_
-
-`display` _expr_
-
-mostrar o valor de uma variável ou expressão em cada _breakpoint_
-
-# Observar valores de variáveis
-
-Vamos usar:
-
-1.  `break` para colocar um _breakpoint_ no ciclo `for`;
-2.  `display` para mostrar os valores de `n`, `i`, e `fact`.
-
-# Conclusão
+### Conclusão
 
 -   Valor inicial de `fact` é incorreto
     -   deveria ser 1 (porque 0!=10!=1)
@@ -169,54 +88,75 @@ Vamos usar:
 int n, i, fact = 1;  // corrigido
 ```
 
-# Sumário de comandos
+## Usar o GDB
 
-`break` _fun_
+-   O GDB opera sobre _ficheiros executáveis_ (não diretamente sobre o código-fonte)
+-   Para usar o GDB com um programa em C devemos compilar com opção `-g`:
+-   A opção `-g` indica ao compilador para incluir no executável informação extra para o GDB
 
-definir _breakpoint_ no ínicio da função _fun_
+```sh
+$ gcc -g -o programa programa.c
+```
 
-`break` _n_
+-   Em seguida executamos `gdb` sobre o ficheiro executável compilado:
 
-definir _breakpoint_ no ínicio da linha _n_
+```sh
+$ gdb programa
+```
 
-`delete` _n_
+-   Após algumas mensagens obtemos a indicação de que o GDB está à espera de um comando:
 
-remover o _breakpoint_ número _n_
+```sh
+...
+(gdb) 
+```
 
-`run`
+-   Tal como a _shell_ de Linux, o GDB é um _programa interativo_:
+    -   lê um comando do teclado (até _Enter_)
+    -   processa o comando e mostra resultados
+    -   volta a esperar um novo comando
+-   O comando `quit` termina a sessão
+    -   alternativa: `Ctrl-D` (end-of-file)
+    -   podemos abreviar comandos  
+        (e.q., escrever `q` em vez de `quit`)
+-   Vídeo no YouTube:  
+    [Introduction to GDB: a tutorial](https://youtu.be/sCtY--xRUyI) (Harvard CS50)
 
-executar o programa desde o início
+### Executar o programa
+- Usamos o comando `run` para correr o nosso programa dentro do GDB:
 
-# Sumário de comandos (cont.)
+```sh
+(gdb) run
+Starting program...
+Introduza um inteiro positivo:4
+Factorial 4 = 0
+[Inferior 1 (process 9885) exited...
+```
 
-`next`
+-   O programa terminou e deu resultado errado
+-   Neste momento já não podemos observar o estado de variáveis
+-   Vamos correr novamente, mas desta vez pedir para parar a execução a meio
+-   Fazemos isso definindo um _breakpoint_ no programa
 
-executar a próxima linha
+Descricao | Comando
+----------|:------:
+*Mostrar onde estou* | `where` ou `backtrace`
+*Repetir comando anterior* | `Enter`
+*Atribuir valores a variaveis* | `print fact = 1`
+*Imprimir todas as variaveis locais* | `info locals`
+*Desabilitar todos os breakpoints* | `disable`
+*Mostrar o valor de uma variável/expressão em cada breakpoint* | `display var` / `display expr`
+*Ddefinir breakpoint no ínicio da linha n* | `break` _n_
+*Remover o breakpoint número n* | `delete` _n_
+*Executar a próxima linha (mas entra dentro de funções)* | `step`
+*Continuar a execução até ao próximo breakpont (ou até ao final)* | `continue`
+*Mostrar o valor da expressão sempre que parar* | `display` _expr_
+*Modificar o valor de uma variável* | `set var` _nome_ = _expr_
 
-`step`
+### Observar valores de variáveis
 
-executar a próxima linha (mas entra dentro de funções)
-
-`continue`
-
-continuar a execução até ao próximo _breakpont_ (ou até ao final)
-
-# Sumário de comandos (cont.)
-
-`print` _expr_
-
-calcular e mostrar o valor duma expressão
-
-`display` _expr_
-
-mostrar o valor da expressão sempre que parar
-
-`set var` _nome_ = _expr_
-
-modificar o valor de uma variável
-
-`quit`
-
-terminar a sessão
+*Vamos usar:*
+1.  `break` para colocar um _breakpoint_ no ciclo `for`;
+2.  `display` para mostrar os valores de `n`, `i`, e `fact`.
 
 >Fonte: [Pedro Vasconcelos](https://www.dcc.fc.up.pt/~pbv/aulas/progimp/teoricas/teorica12.html) (Outubro 2019) 
