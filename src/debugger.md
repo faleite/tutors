@@ -172,6 +172,7 @@ Descricao | Comando
 
 #### Valgrind
 - *O **Valgrind** é uma ferramenta de análise de código, detecta várias classes de erros, incluindo vazamentos de memória, referências inválidas, uso incorreto de APIs de alocação de memória, entre outros.*
+
 Descricao | Comando
 ----------|:------:
 *Compilacao de codigo para melhor uso do Valgrind* | `gcc -g file.c -o file`
