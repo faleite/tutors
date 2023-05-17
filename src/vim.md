@@ -112,7 +112,7 @@ Descrição | Comando
 *Salvar folds* | **:mkview**
 *Trazer folds* | **loadview**
 
-### ABRIR E FECHAR TODOS OS FOLDS:
+### ABRIR E FECHAR TODOS OS FOLDS
 Descrição | Comando
 ----------|:------:
 *Abre todos os folds* | **zn** 
