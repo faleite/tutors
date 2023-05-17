@@ -1,5 +1,4 @@
 # Introdução ao GDB
->Fonte: [Pedro Vasconcelos](https://www.dcc.fc.up.pt/~pbv/aulas/progimp/teoricas/teorica12.html) (Outubro 2019) 
 
 # O que é o GDB
 
@@ -219,3 +218,5 @@ modificar o valor de uma variável
 `quit`
 
 terminar a sessão
+
+>Fonte: [Pedro Vasconcelos](https://www.dcc.fc.up.pt/~pbv/aulas/progimp/teoricas/teorica12.html) (Outubro 2019) 
