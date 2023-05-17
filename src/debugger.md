@@ -11,6 +11,7 @@
     -   especificar pontos de paragem
     -   imprimir valores de variáveis
 -   Suporta C, C++, Objective-C, Ada e Pascal (entre outras linguagens)
+>Fonte: [Pedro Vasconcelos](https://www.dcc.fc.up.pt/~pbv/aulas/progimp/teoricas/teorica12.html) (Outubro 2019) 
 
 ## Exemplo para teste
 
@@ -138,6 +139,7 @@ Factorial 4 = 0
 -   Vamos correr novamente, mas desta vez pedir para parar a execução a meio
 -   Fazemos isso definindo um _breakpoint_ no programa
 
+### Mais Comandos
 Descricao | Comando
 ----------|:------:
 *Mostrar onde estou* | `where` ou `backtrace`
@@ -159,4 +161,19 @@ Descricao | Comando
 1.  `break` para colocar um _breakpoint_ no ciclo `for`;
 2.  `display` para mostrar os valores de `n`, `i`, e `fact`.
 
->Fonte: [Pedro Vasconcelos](https://www.dcc.fc.up.pt/~pbv/aulas/progimp/teoricas/teorica12.html) (Outubro 2019) 
+### Outros comandos para testes
+
+#### Sanitize
+Descricao | Comando
+----------|:------:
+*Verificar se ha "buffer overflow"* | `cc file.c -fsanitize=adress -g`
+*Verificar se ha vazamentos de memoria"* | `cc file.c -fsanitize=leak -g`
+*Opção de compilação inclui infos de depuração no binário gerado* | `-g`
+
+#### Valgrind
+- *O **Valgrind** é uma ferramenta de análise de código, detecta várias classes de erros, incluindo vazamentos de memória, referências inválidas, uso incorreto de APIs de alocação de memória, entre outros.*
+Descricao | Comando
+----------|:------:
+*Compilacao de codigo para melhor uso do Valgrind* | `gcc -g file.c -o file`
+*Uso geral* | `valgrind` 
+*Monitora a alocação/uso de memória e fornece infos sobre vazamentos de memória* | `valgrind --leak-check=full ./file`
