@@ -148,12 +148,13 @@ Descricao | Comando
 *Imprimir todas as variaveis locais* | `info locals`
 *Desabilitar todos os breakpoints* | `disable`
 *Mostrar o valor de uma variável/expressão em cada breakpoint* | `display var` / `display expr`
-*Ddefinir breakpoint no ínicio da linha n* | `break` _n_
+*Ddefinir breakpoint no ínicio da linha n (se tiver apenas um arquivo)* | `break` _n_
 *Remover o breakpoint número n* | `delete` _n_
 *Executar a próxima linha (mas entra dentro de funções)* | `step`
 *Continuar a execução até ao próximo breakpont (ou até ao final)* | `continue`
 *Mostrar o valor da expressão sempre que parar* | `display` _expr_
 *Modificar o valor de uma variável* | `set var` _nome_ = _expr_
+*Chamar uma função e obter o seu retorno* | `call function(param)`
 
 ### Observar valores de variáveis
 
