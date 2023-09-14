@@ -10,5 +10,6 @@
 7. [**tmux**](https://github.com/faleite/tutors/blob/main/src/tmux.md)
 8. [**virtualenv**](https://github.com/faleite/tutors/blob/main/src/virtualenv.md)
 9. [**py_project**](https://github.com/faleite/tutors/blob/main/src/projeto.md)
+10. [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
