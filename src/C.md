@@ -4,7 +4,7 @@
 			██║
 			██║
 			╚██████╗
-			 ╚═════╝ notes
+			 ╚═════╝ notes.
 ```
 ---
 ## [Code-vault](https://github.com/faleite/code-vault)
