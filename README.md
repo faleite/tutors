@@ -5,7 +5,6 @@
 | |_| |_| | || (_) | |  \__ \
  \__|\__,_|\__\___/|_|  |___/
 ```
-- *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
 ### Bug Terminal VSCODE 1.82 -> 42
 ```
@@ -22,6 +21,7 @@
     "files.autoSave": "afterDelay"
   }
 ```
+- *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
 1. [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 2. [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger.md)
