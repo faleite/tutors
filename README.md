@@ -6,7 +6,7 @@
  \__|\__,_|\__\___/|_|  |___/
 ```
 - *Tutorias rápidos e práticos de ferramentas diversas para programação*
-
+```
 {
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.profiles.linux": {
@@ -19,6 +19,7 @@
     },
     "files.autoSave": "afterDelay"
   }
+```
 
 1. [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 2. [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger.md)
