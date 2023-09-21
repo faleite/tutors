@@ -6,6 +6,8 @@
  \__|\__,_|\__\___/|_|  |___/
 ```
 - *Tutorias rápidos e práticos de ferramentas diversas para programação*
+
+### Bug Terminal VSCODE 1.82 -> 42
 ```
 {
     "terminal.integrated.defaultProfile.linux": "bash",
