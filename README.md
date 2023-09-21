@@ -7,6 +7,19 @@
 ```
 - *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
+{
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/usr/bin/flatpak-spawn",
+        "args": ["--host", "--env=TERM=xterm-256color", "zsh"],
+        "icon": "terminal-zsh",
+        "overrideName": true
+      }
+    },
+    "files.autoSave": "afterDelay"
+  }
+
 1. [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 2. [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger.md)
 3. [**git**](https://github.com/faleite/tutors/blob/main/src/git.md)
