@@ -11,6 +11,25 @@
 ## [CS50](https://github.com/faleite/cs50/blob/main/C.md)
 ## [Piscine](https://github.com/faleite/42Piscine/tree/main/Notes/Notes)
 ---
+## Termo ***desreferenciar***
+- **Desreferenciar** é um termo que significa acessar o valor armazenado em um endereço de memória apontado por um ponteiro.\
+Quando você tem um ponteiro, ele armazena um endereço de memória, e desreferenciar esse ponteiro significa acessar o valor\
+armazenado nesse endereço de memória.
+- Em **C** e em muitas outras linguagens de programação, você usa o operador de desreferência `*` para acessar o valor\
+apontado por um ponteiro. Por exemplo, se você tem um ponteiro `ptr` que aponta para um inteiro, `*ptr` permite que você\
+acesse o valor inteiro armazenado naquele endereço de memória.
+
+***Aqui está um exemplo simples em C:***
+```c
+int valor = 42;
+int *ptr = &valor; // ptr aponta para o endereço de memória de 'valor'
+
+int x = *ptr; // 'x' recebe o valor desreferenciado apontado por 'ptr'
+```
+- Neste exemplo, `*ptr` desreferencia o ponteiro `ptr`, o que significa que ele acessa o valor 42 armazenado na memória para\
+o qual `ptr` aponta.
+- Então, quando você ouve o termo "desreferenciar um ponteiro", pense nele como acessar o valor que o ponteiro está apontando,\
+em vez de acessar o próprio ponteiro ou seu endereço de memória.
 
 ## **Structs**
 ```c
