@@ -11,7 +11,7 @@
 ## [CS50](https://github.com/faleite/cs50/blob/main/C.md)
 ## [Piscine](https://github.com/faleite/42Piscine/tree/main/Notes/Notes)
 ---
-## Termo ***desreferenciar***
+## **Desreferenciar**
 - **Desreferenciar** é um termo que significa acessar o valor armazenado em um endereço de memória apontado por um ponteiro.\
 Quando você tem um ponteiro, ele armazena um endereço de memória, e desreferenciar esse ponteiro significa acessar o valor\
 armazenado nesse endereço de memória.
