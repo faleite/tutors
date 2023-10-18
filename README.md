@@ -18,8 +18,20 @@
         "overrideName": true
       }
     },
-    "files.autoSave": "afterDelay"
-  }
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "markdown": false,
+      "scminput": false,
+      "c": false
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false,
+	  "editor.detectIndentation": true,
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+}
 ```
 - *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
