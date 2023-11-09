@@ -6,33 +6,6 @@
  \__|\__,_|\__\___/|_|  |___/
 ```
 
-### Bug Terminal VSCODE 1.82 -> 42
-```
-{
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.profiles.linux": {
-      "bash": {
-        "path": "/usr/bin/flatpak-spawn",
-        "args": ["--host", "--env=TERM=xterm-256color", "zsh"],
-        "icon": "terminal-zsh",
-        "overrideName": true
-      }
-    },
-    "github.copilot.enable": {
-      "*": true,
-      "plaintext": false,
-      "markdown": false,
-      "scminput": false,
-      "c": false
-    },
-    "editor.tabSize": 4,
-    "editor.insertSpaces": false,
-	  "editor.detectIndentation": true,
-    "workbench.editor.enablePreview": false,
-    "editor.minimap.enabled": false,
-    "files.autoSave": "afterDelay",
-}
-```
 - *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
 1. [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
@@ -45,5 +18,5 @@
 8. [**virtualenv**](https://github.com/faleite/tutors/blob/main/src/virtualenv.md)
 9. [**py_project**](https://github.com/faleite/tutors/blob/main/src/projeto.md)
 10. [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
-
+11. [virtualenv]
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
