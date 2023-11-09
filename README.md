@@ -18,5 +18,5 @@
 8. [**virtualenv**](https://github.com/faleite/tutors/blob/main/src/virtualenv.md)
 9. [**py_project**](https://github.com/faleite/tutors/blob/main/src/projeto.md)
 10. [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
-11. [virtualenv]
+11. [virtualenv](https://github.com/faleite/tutors/blob/main/src/linux_server.md)
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
