@@ -21,9 +21,3 @@
 11. [**linux server**](https://github.com/faleite/tutors/blob/main/src/linux_server.md)
 12. [**Diagrams with Mermaid**](https://github.com/faleite/tutors/blob/main/src/mermaid.md)
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
-
-```mermaid
-graph TB;
-A["`**C**`"]
-click A "https://github.com/faleite/tutors/blob/main/src/C.md";
-```
