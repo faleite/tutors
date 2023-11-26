@@ -1,4 +1,4 @@
-# Diagrams with Mermaid
+# [Diagrams with Mermaid](http://mermaid.js.org)
 
 ## Flowchart
 
