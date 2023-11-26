@@ -19,4 +19,5 @@
 9. [**py_project**](https://github.com/faleite/tutors/blob/main/src/projeto.md)
 10. [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
 11. [**linux server**](https://github.com/faleite/tutors/blob/main/src/linux_server.md)
+12. [**Diagrams with Mermaid**](https://github.com/faleite/tutors/blob/main/src/mermaid.md)
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
