@@ -84,7 +84,7 @@ function variable_expander(str, start, len):
 3. Crie uma função que percorre a string e procura por expansões de variáveis `expander_string(char *str):`.
   - Se encontrar uma expansão de variável, ela chama a função variable_expander para expandir a variável. A função ignora os caracteres entre aspas simples. Se encontrar uma aspa dupla, ela faz a expansão e ignora aspas simples dentro de aspas duplas.
 
-### ### Impelmentação de string_expander em pseudo-código:
+### Impelmentação de string_expander em pseudo-código:
 ```c
 function expander_string(string: str):
     index = 0
