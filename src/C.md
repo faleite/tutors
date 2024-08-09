@@ -11,7 +11,7 @@
 ## Artigos
 - [**Code-vault**](https://github.com/faleite/code-vault)
 - [**CS50**](https://github.com/faleite/cs50/blob/main/C.md)
-- [**42 Piscine**](https://github.com/faleite/42Piscine/tree/main/Notes/Notes)
+- [**42 Piscine**](https://github.com/faleite/42_Piscine/tree/main/dcs/projects_notes)
 ---
 ## Asuntos
 - [**Expansão de variáveis**](#expansão-de-variáveis)
