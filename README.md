@@ -8,6 +8,7 @@
 
 *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
+- [**CPP**](https://github.com/faleite/42cpp00/wiki)
 - [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 - [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger.md)
 - [**git**](https://github.com/faleite/tutors/blob/main/src/git.md)
@@ -20,6 +21,5 @@
 - [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
 - [**linux server**](https://github.com/faleite/tutors/blob/main/src/linux_server.md)
 - [**Diagrams with Mermaid**](https://github.com/faleite/tutors/blob/main/src/mermaid.md)
-- [**CPP**](https://github.com/faleite/42cpp00/wiki)
 
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
