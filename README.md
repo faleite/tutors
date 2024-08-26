@@ -8,6 +8,7 @@
 
 *Tutorias rápidos e práticos de ferramentas diversas para programação*
 
+- [**Prompts**](https://github.com/faleite/tutors/blob/main/src/prompts.md)
 - [**CPP**](https://github.com/faleite/42cpp00/wiki)
 - [**C**](https://github.com/faleite/tutors/blob/main/src/C.md)
 - [**debugger**](https://github.com/faleite/tutors/blob/main/src/debugger.md)
