@@ -92,7 +92,7 @@ pode se beneficiar de novas funcionalidades ou práticas. Como você
 modernizaria esse código, aproveitando as últimas versões da linguagem/tecnologia?
 ```
 
-### 11. Verificação de Código
+### 11. Verificação de Código em `C++98`
 *Prompt:*
 ```
 Analise o código abaixo para avaliar sua implementação conforme a versão C++ 98. 
