@@ -22,6 +22,6 @@
 - [**vim**](https://github.com/faleite/tutors/blob/main/src/vim.md)
 - [**linux server**](https://github.com/faleite/tutors/blob/main/src/linux_server.md)
 - [**Diagrams with Mermaid**](https://github.com/faleite/tutors/blob/main/src/mermaid.md)
-- [**Spring Boot Project**](https://github.com/faleite/tutors/blob/main/src/spring-project/)
+- [**Spring Boot Project**](https://github.com/faleite/tutors/tree/main/src/spring-project/src/main/java/dev/faleite/schedule)
 
 ### *Access to the [interactive map](https://faleite.github.io/tutors)*
