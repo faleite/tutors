@@ -138,17 +138,17 @@ ___
 
 Ação | Comando |
 -----|---------|
-Conectar diretório ao repositório| **git remote add origin \<endereçoSshGit>**
-Nomear branch do repositótio| **git branch -M main**
-Envia tudo ao github e faz a branch local seguir a branch remoto| **git push -u origin main**
-Clonar repositório remoto| **git clone \<endereçoSshGit>**
-Trazer/recuperar informações remotas de vários branches| **git fetch**
-Trazer/recuperar informações remotas de todos as branches| **git fetch --all**
-Atualizar informações na branch main trazidas pelo **fetch**| **git rebase origin/main**
-Fazer **fetch** e **rebase** ao mesmo tempo| **git pull --rebase**
-Fazer **fetch** e **merge** ao mesmo tempo| **git pull**
-Fazer **fetch** e **merge** em branch especifica| **git pull origin \<nome-branch>**
-Fazer **fetch** em branch especifica| **git fetch origin \<nome-branch>**
+Conectar diretório ao repositório| `git remote add origin \<endereçoSshGit>`
+Nomear branch do repositótio| `git branch -M main`
+Envia e conecta a branch local a branch remoto| `git push -u origin <nome-da-branch>`
+Clonar repositório remoto| `git clone \<endereçoSshGit>`
+Trazer/recuperar informações remotas de vários branches| `git fetch`
+Trazer/recuperar informações remotas de todos as branches| `git fetch --all`
+Atualizar informações na branch main trazidas pelo `fetch`| `git rebase origin/main`
+Fazer `fetch` e `rebase` ao mesmo tempo| `git pull --rebase`
+Fazer `fetch` e `merge` ao mesmo tempo| `git pull`
+Fazer `fetch` e `merge` em branch especifica| `git pull origin \<nome-branch>`
+Fazer `fetch` em branch especifica| `git fetch origin \<nome-branch>`
 
 
 ___
