@@ -256,6 +256,7 @@ Listar todas as tags criadas| **git tag**
 Listar todas as tags criadas e suas mensagens| **git tag -n**
 Mostrar o conteúdo das tegs| **git show --tags**
 Apagar tags| **git tag -d v1.0** (v1.0 = nome da tag)
+Enviar **tag** criada para o repositório remoto | `git push origin <nome-da-tag>`
 ___
 
 ### Menssagem padronizada do comiit no git:
